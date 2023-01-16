@@ -24,7 +24,7 @@ void Fetch_Controller::Laser_Scan_Callback(const sensor_msgs::LaserScan::ConstPt
     If the minimum scan in this direction is greater than 1m, drive forward. 
     Otherwise, turn left. 
     */
-    ros::Publisher pub;
+    ros::Publisher pub = nh_.advertise<geometry_msgs::Twist>("/cmd_vel", 1000);
     geometry_msgs::Twist twist; 
 
     float mid = msg_laser_scan->angle_max - msg_laser_scan->angle_min;
