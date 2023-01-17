@@ -23,6 +23,49 @@
 /||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\
 \/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/*/
 
+function getElement(heap, index){
+    return heap[index - 1][2];
+}
+
+function swap(heap, index1, index2){
+    var temp = heap[index1 - 1];
+    heap[index1 - 1] = heap[index2 - 1];
+    heap[index2 - 1] = temp;
+}
+
+function shiftUp(heap){
+    var index = heap.length;
+    
+    while (index > 1 && (getElement(heap, math.floor(index / 2)) > getElement(heap, index))){ // 2 > 1
+        swap(heap, index, math.floor(index / 2));
+        index = math.floor(index / 2);
+    }
+}
+
+function shiftDown(heap, k){
+    var sz = heap.length;
+    while (2 * k <= sz){
+        var j = 2 * k;
+        if (j < sz && getElement(heap, j) > getElement(heap, j + 1)) ++j; // 1 < 2
+        if (!(getElement(heap, k) > getElement(heap, j))) break; // 2 >= 1
+        swap(heap, k, j);
+        k = j;
+    }
+}// shiftDown
+
+function minheap_insert(heap, new_element) {
+    heap.push(new_element);
+    shiftUp(heap);
+}
+
+function minheap_extract(heap) {
+    var temp = heap[0];
+    heap[0] = heap[heap.length - 1];
+    heap.pop();
+    shiftDown(heap, 1);
+    return temp;
+}
+
 function initSearchGraph() {
 
     // create the search queue
@@ -46,12 +89,20 @@ function initSearchGraph() {
 
             // STENCIL: determine whether this graph node should be the start
             //   point for the search
+            if (ypos == 0 && xpos == 0){
+                G[iind][jind].queued = true;
+                G[iind][jind].distance = 0;
+                G[iind][jind].priority = 1;
+                G[iind][jind].parent = G[iind][jind];
+                minheap_insert(visit_queue, [iind, jind, G[iind][jind].priority]);
+            }
         }
     }
 }
 
+
 function iterateGraphSearch() {
-    
+
     // STENCIL: implement a single iteration of a graph search algorithm
     //   for A-star (or DFS, BFS, Greedy Best-First)
     //   An asynch timing mechanism is used instead of a for loop to avoid
@@ -69,6 +120,32 @@ function iterateGraphSearch() {
     //   testCollision - returns whether a given configuration is in collision
     //   drawHighlightedPathGraph - draws a path back to the start location
     //   draw_2D_configuration - draws a square at a given location
+
+    // while(!visit_queue.empty){
+        var arr = visit_queue.minheap_extract(visit_queue);
+        G[arr[0]][arr[1]].visited = true;
+        
+        if (!G[arr[0]][arr[1] - 1].visited && testCollision(G[arr[0]][arr[1] - 1].x, G[arr[0]][arr[1] - 1].y)){
+            G[arr[0]][arr[1] - 1].parent = G[arr[0]][arr[1]];
+            G[arr[0]][arr[1] - 1].visited = true;
+
+            if(!G[arr[0]][arr[1] - 1] != goal){
+                G[arr[0]][arr[1] - 1].distance = G[arr[0]][arr[1]].distance + 1;
+                // G[arr[0]][arr[1] - 1].parent = G[arr[0]][arr[1]];
+                G[arr[0]][arr[1] - 1].queued = true;
+                G[arr[0]][arr[1] - 1].priority = calc_distance(G[arr[0]][arr[1] - 1], _____);
+                minheap_insert(visit_queue, [arr[0], arr[1] - 1, G[arr[0]][arr[1] - 1].priority]);
+            }
+            else{
+                search_iterate = false;
+                drawHighlightedPathGraph;
+                return "succeeded";
+            }
+        }
+
+        return "iterating";
+    //}
+
 }
 
 //////////////////////////////////////////////////

@@ -39,10 +39,13 @@ function swap(heap, index1, index2){
 
 function shiftUp(heap){
     var index = heap.length;
-    
-    while (index > 1 && (getElement(heap, math.floor(index / 2)) > getElement(heap, index))){ // 2 > 1
-        swap(heap, index, math.floor(index / 2));
-        index /= 2;
+    // console.log("    shiftUp");
+    while (index > 1 && (getElement(heap, Math.floor(index / 2)) > getElement(heap, index))){ // 2 > 1
+        // console.log("    inside while loop");
+        swap(heap, index, Math.floor(index / 2));
+
+        // console.log("   swapped");
+        index = Math.floor(index / 2);
     }
 }
 
@@ -92,25 +95,12 @@ minheaper.insert = minheap_insert;
 
 // define extract function for min binary heap
 function minheap_extract(heap) {
-    // heap[0] = heap[heap.length - 1];
-    // heap.pop();
-
-    // var k = 1;
-    // while (2 * k <= heap.length){
-    //     var j = 2 * k;
-    //     if (j < heap.length && heap[j-1] < heap[j]) ++j; // 1 < 2
-    //     if (!(heap[k-1] < heap[j-1])) break; // 2 >= 1
-    //     // swap(k, j);
-    //     var tmp = heap[k];
-    //     heap[k] = heap[j];
-    //     heap[j] = tmp;
-    //     k = j;
-    // }
-
     // STENCIL: implement your min binary heap extract operation
+    var popped = heap[0];
     heap[0] = heap[heap.length - 1];
     heap.pop();
     shiftDown(heap, 1);
+    return popped;
 }
 
 // assign extract function within minheaper object
