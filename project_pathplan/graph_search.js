@@ -51,8 +51,7 @@ function initSearchGraph() {
 }
 
 function iterateGraphSearch() {
-
-
+    
     // STENCIL: implement a single iteration of a graph search algorithm
     //   for A-star (or DFS, BFS, Greedy Best-First)
     //   An asynch timing mechanism is used instead of a for loop to avoid

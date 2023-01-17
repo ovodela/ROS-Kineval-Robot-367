@@ -25,28 +25,62 @@
 // create empty object 
 minheaper = {}; 
 
+//helper
+
+function getElement(heap, index){
+    return heap[index - 1];
+}
+
+function swap(heap, index1, index2){
+    var temp = heap[index1 - 1];
+    heap[index1 - 1] = heap[index2 - 1];
+    heap[index2 - 1] = temp;
+}
+
+function shiftUp(heap){
+    var index = heap.length;
+    
+    while (index > 1 && (getElement(heap, math.floor(index / 2)) > getElement(heap, index))){ // 2 > 1
+        swap(heap, index, math.floor(index / 2));
+        index /= 2;
+    }
+}
+
+function shiftDown(heap, k){
+    var sz = heap.length;
+    while (2 * k <= sz){
+        var j = 2 * k;
+        if (j < sz && getElement(heap, j) > getElement(heap, j + 1)) ++j; // 1 < 2
+        if (!(getElement(heap, k) > getElement(heap, j))) break; // 2 >= 1
+        swap(heap, k, j);
+        k = j;
+    }
+}// shiftDown
+
 // define insert function for min binary heap
 function minheap_insert(heap, new_element) {
     //from lab
-    var elementIdx = minheaper.length;
-    var prntIdx = math.floor((elementIdx - 1) / 2);
+    // var elementIdx = heap.length;
+    // var prntIdx = math.floor((elementIdx - 1) / 2);
 
-    heap.push(new_element);
+    // heap.push(new_element);
 
-    var heaped = (elntIdx <= 0) || (heap[prntIdx] <= heap[elementIdx]);
+    // var heaped = (elementIdx <= 0) || (heap[prntIdx] <= heap[elementIdx]);
     
-    while (!heaped){
-        var tmp = heap[prntIdx];
-        heap[prntIdx] = heap[elementIdx];
-        heap[elementIdx] = tmp;
+    // while (!heaped){
+    //     var tmp = heap[prntIdx];
+    //     heap[prntIdx] = heap[elementIdx];
+    //     heap[elementIdx] = tmp;
 
-        elementIdx = prntIdx;
-        prntIdx = math.floor((elementIdx - 1) / 2);
+    //     elementIdx = prntIdx;
+    //     prntIdx = math.floor((elementIdx - 1) / 2);
 
-        heaped = (elntIdx <= 0) || (heap[prntIdx] <= heap[elementIdx]);
-    }
+    //     heaped = (elementIdx <= 0) || (heap[prntIdx] <= heap[elementIdx]);
+    // }
 
     // STENCIL: implement your min binary heap insert operation
+    heap.push(new_element);
+    shiftUp(heap);
 }
 
 // assign insert function within minheaper object
@@ -58,8 +92,25 @@ minheaper.insert = minheap_insert;
 
 // define extract function for min binary heap
 function minheap_extract(heap) {
+    // heap[0] = heap[heap.length - 1];
+    // heap.pop();
+
+    // var k = 1;
+    // while (2 * k <= heap.length){
+    //     var j = 2 * k;
+    //     if (j < heap.length && heap[j-1] < heap[j]) ++j; // 1 < 2
+    //     if (!(heap[k-1] < heap[j-1])) break; // 2 >= 1
+    //     // swap(k, j);
+    //     var tmp = heap[k];
+    //     heap[k] = heap[j];
+    //     heap[j] = tmp;
+    //     k = j;
+    // }
 
     // STENCIL: implement your min binary heap extract operation
+    heap[0] = heap[heap.length - 1];
+    heap.pop();
+    shiftDown(heap, 1);
 }
 
 // assign extract function within minheaper object
