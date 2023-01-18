@@ -1,4 +1,4 @@
-//CI grader generates report at 17-01-2023-13-24-22
+//CI grader generates report at 17-01-2023-22-19-19
 grade = 
 {
   "omkarv": {
@@ -16,9 +16,7 @@ grade =
       },
       "ROS Pub/Sub": {
         "status": "PENDING",
-        "comments": [
-          "Passing 0 of 3 tests"
-        ]
+        "comments": "Passing 3 out of 3 tests"
       },
       "PathPlan_Heap": {
         "status": "PENDING",
