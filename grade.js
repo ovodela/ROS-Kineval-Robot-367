@@ -1,4 +1,4 @@
-//CI grader generates report at 20-01-2023-07-27-23
+//CI grader generates report at 21-01-2023-02-23-50
 grade = 
 {
   "omkarv": {
@@ -9,9 +9,9 @@ grade =
     "repository": "AutoRob-WN23/kineval-stencil-ovodela",
     "assignments": {
       "Honor": {
-        "status": "PENDING",
+        "status": "CHECK",
         "comments": [
-          ""
+          "comment: honor code certified"
         ]
       },
       "ROS Pub/Sub": {
