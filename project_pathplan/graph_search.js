@@ -23,8 +23,8 @@
 /||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\
 \/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/||\/*/
 
-function getElement(G, heap, index){
-    return G[heap[index - 1][0], heap[index - 1][1]].priority;
+function getElement(heap, index){
+    return G[heap[index - 1][0]][heap[index - 1][1]].priority;
 }
 
 function swap(heap, index1, index2){
@@ -33,35 +33,36 @@ function swap(heap, index1, index2){
     heap[index2 - 1] = temp;
 }
 
-function shiftUp(G, heap){
+function shiftUp(heap){
     var index = heap.length;
-    while (index > 1 && (getElement(G, heap, Math.floor(index / 2)) > getElement(G, heap, index))){ // 2 > 1
+    // console.log(index);
+    while (index > 1 && (getElement(heap, Math.floor(index / 2)) > getElement(heap, index))){ // 2 > 1
         swap(heap, index, Math.floor(index / 2));
         index = Math.floor(index / 2);
     }
 }
 
-function shiftDown(G, heap, k){
+function shiftDown(heap, k){
     var sz = heap.length;
     while (2 * k <= sz){
         var j = 2 * k;
-        if (j < sz && getElement(G, heap, j) > getElement(G, heap, j + 1)) ++j; // 1 < 2
-        if (!(getElement(G, heap, k) > getElement(G, heap, j))) break; // 2 >= 1
+        if (j < sz && getElement(heap, j) > getElement(heap, j + 1)) ++j; // 1 < 2
+        if (!(getElement(heap, k) > getElement(heap, j))) break; // 2 >= 1
         swap(heap, k, j);
         k = j;
     }
 }// shiftDown
 
-function minheap_insert(G, heap, new_element) {
+function minheap_insert(heap, new_element) {
     heap.push(new_element);
-    shiftUp(G, heap);
+    shiftUp(heap);
 }
 
-function minheap_extract(G, heap) {
+function minheap_extract(heap) {
     var temp = heap[0];
     heap[0] = heap[heap.length - 1];
     heap.pop();
-    shiftDown(G, heap, 1);
+    shiftDown(heap, 1);
     return temp;
 }
 
@@ -88,23 +89,24 @@ function initSearchGraph() {
 
             // STENCIL: determine whether this graph node should be the start
             //   point for the search
-            if (ypos == q_init[1] && xpos == q_init[0]){
+            if ((Math.abs(xpos - q_init[0]) < (eps/2))  && (Math.abs(ypos - q_init[1]) < (eps/2))){
                 G[iind][jind].queued = true;
                 G[iind][jind].distance = 0;
                 G[iind][jind].priority = 1;
                 G[iind][jind].parent = G[iind][jind];
-                minheap_insert(G, visit_queue, [iind, jind]);
+                minheap_insert(visit_queue, [iind, jind]);
+                console.log("initial point added");
             }
         }
     }
 }
 
-function calc_priority(G, curr, goal){
-    var xDiff =  G[goal[0]][goal[1]].x - G[curr[0]][curr[1]].x;
-    var yDiff =  G[goal[0]][goal[1]].y - G[curr[0]][curr[1]].y;
+function calc_priority(curr, goal){
+    var xDiff =  goal[0] - G[curr[0]][curr[1]].x;
+    var yDiff =  goal[1] - G[curr[0]][curr[1]].y;
     var euclidDist = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-
-    return euclidDist + G[curr[0]][curr[1]].distance;
+    // console.log("calcPriority");
+    return euclidDist + (G[curr[0]][curr[1]].distance / 9);
 
 }
 //old check node
@@ -128,6 +130,36 @@ function calc_priority(G, curr, goal){
 //     }
 // }
 
+function checkNode(arr, temp_x, temp_y){
+    // console.log("checkNode");
+    if (!G[temp_x][temp_y].visited && !testCollision([G[temp_x][temp_y].x, G[temp_x][temp_y].y])){
+        // console.log(1);
+        if(!((Math.abs(G[temp_x][temp_y].x - q_goal[0]) < (eps/2)) && (Math.abs(G[temp_x][temp_y].y - q_goal[1]) < (eps/2)))){
+            // console.log(2);
+            G[temp_x][temp_y].queued = true;
+            G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
+            G[temp_x][temp_y].priority = calc_priority([temp_x, temp_y], q_goal);
+            G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
+
+            minheap_insert(visit_queue, [temp_x, temp_y]);
+            draw_2D_configuration([G[temp_x][temp_y].x, G[temp_x][temp_y].y], "queued");
+            if (G[arr[0]][arr[1]].distance + 1 < G[temp_x][temp_y].distance){
+                G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
+                G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
+                G[temp_x][temp_y].queued = true;
+                G[temp_x][temp_y].priority = calc_priority([temp_x, temp_y], q_goal);
+                // minheap_insert(visit_queue, [arr[0], arr[1] - 1, G[arr[0]][arr[1] - 1].priority]);
+            }
+        }
+        else{
+            search_iterate = false;
+            drawHighlightedPathGraph(G[temp_x][temp_y]);
+            return "succeeded";
+        }
+    }
+    return "null";
+}
+
 function iterateGraphSearch() {
 
     // STENCIL: implement a single iteration of a graph search algorithm
@@ -149,98 +181,41 @@ function iterateGraphSearch() {
     //   draw_2D_configuration - draws a square at a given location
 
     // while(!visit_queue.empty){
-        var arr = visit_queue.minheap_extract(G, visit_queue);
+        console.log("start");
+        if (visit_queue.length == 0){ 
+            search_iterate = false;
+            return "failed";
+        }
+        var arr = minheap_extract(visit_queue);
+        draw_2D_configuration([G[arr[0]][arr[1]].x, G[arr[0]][arr[1]].y], "visited");
         G[arr[0]][arr[1]].visited = true;
+        search_visited++;
+        console.log("visit");
+        // console.log(arr);
         
         //east
-        var temp_x = arr[0] + eps;
+        var temp_x = arr[0] + 1;
         var temp_y = arr[1];
-
-        if (!G[temp_x][temp_y].visited && testCollision(G[temp_x][temp_y].x, G[temp_x][temp_y].y)){
-
-            if(!(G[temp_x][temp_y].x == q_goal[0] && G[temp_x][temp_y].y == q_goal[1])){
-                G[temp_x][temp_y].queued = true;
-                minheap_insert(visit_queue, [temp_x, temp_y]);
-                if (G[arr[0]][arr[1]].distance + 1 < G[temp_x][temp_y].distance){
-                    G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
-                    G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
-                    G[temp_x][temp_y].queued = true;
-                    G[temp_x][temp_y].priority = calc_distance(G, [temp_x, temp_y], q_goal);
-                    // minheap_insert(visit_queue, [arr[0], arr[1] - 1, G[arr[0]][arr[1] - 1].priority]);
-                }
-            }
-            else{
-                search_iterate = false;
-                drawHighlightedPathGraph;
-                return "succeeded";
-            }
-        }
+        var ret = checkNode(arr, temp_x, temp_y);
+        if (ret == "succeeded") return ret;
 
         //south
         temp_x = arr[0];
-        temp_y = arr[1] - eps;
-        if (!G[temp_x][temp_y].visited && testCollision(G[temp_x][temp_y].x, G[temp_x][temp_y].y)){
-
-            if(!(G[temp_x][temp_y].x == q_goal[0] && G[temp_x][temp_y].y == q_goal[1])){
-                G[temp_x][temp_y].queued = true;
-                minheap_insert(visit_queue, [temp_x, temp_y]);
-                if (G[arr[0]][arr[1]].distance + 1 < G[temp_x][temp_y].distance){
-                    G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
-                    G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
-                    G[temp_x][temp_y].priority = calc_distance(G, [temp_x, temp_y], q_goal);
-                    // minheap_insert(visit_queue, [arr[0], arr[1] - 1, G[arr[0]][arr[1] - 1].priority]);
-                }
-            }
-            else{
-                search_iterate = false;
-                drawHighlightedPathGraph;
-                return "succeeded";
-            }
-        }
+        temp_y = arr[1] - 1;
+        ret = checkNode(arr, temp_x, temp_y);
+        if (ret == "succeeded") return ret;
 
         //west
-        temp_x = arr[0] - eps;
+        temp_x = arr[0] - 1;
         temp_y = arr[1];
-        if (!G[temp_x][temp_y].visited && testCollision(G[temp_x][temp_y].x, G[temp_x][temp_y].y)){
-
-            if(!(G[temp_x][temp_y].x == q_goal[0] && G[temp_x][temp_y].y == q_goal[1])){
-                G[temp_x][temp_y].queued = true;
-                minheap_insert(visit_queue, [temp_x, temp_y]);
-                if (G[arr[0]][arr[1]].distance + 1 < G[temp_x][temp_y].distance){
-                    G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
-                    G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
-                    G[temp_x][temp_y].priority = calc_distance(G, [temp_x, temp_y], q_goal);
-                    // minheap_insert(visit_queue, [arr[0], arr[1] - 1, G[arr[0]][arr[1] - 1].priority]);
-                }
-            }
-            else{
-                search_iterate = false;
-                drawHighlightedPathGraph;
-                return "succeeded";
-            }
-        }
+        ret = checkNode(arr, temp_x, temp_y);
+        if (ret == "succeeded") return ret;
 
         //north 
         temp_x = arr[0];
-        temp_y = arr[1] + eps;
-        if (!G[temp_x][temp_y].visited && testCollision(G[temp_x][temp_y].x, G[temp_x][temp_y].y)){
-
-            if(!(G[temp_x][temp_y].x == q_goal[0] && G[temp_x][temp_y].y == q_goal[1])){
-                G[temp_x][temp_y].queued = true;
-                minheap_insert(visit_queue, [temp_x, temp_y]);
-                if (G[arr[0]][arr[1]].distance + 1 < G[temp_x][temp_y].distance){
-                    G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
-                    G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
-                    G[temp_x][temp_y].priority = calc_distance(G, [temp_x, temp_y], q_goal);
-                    // minheap_insert(visit_queue, [arr[0], arr[1] - 1, G[arr[0]][arr[1] - 1].priority]);
-                }
-            }
-            else{
-                search_iterate = false;
-                drawHighlightedPathGraph;
-                return "succeeded";
-            }
-        }
+        temp_y = arr[1] + 1;
+        ret = checkNode(arr, temp_x, temp_y);
+        if (ret == "succeeded") return ret;
 
         return "iterating";
     //}
