@@ -134,27 +134,34 @@ function checkNode(arr, temp_x, temp_y){
     // console.log("checkNode");
     if (!G[temp_x][temp_y].visited && !testCollision([G[temp_x][temp_y].x, G[temp_x][temp_y].y])){
         // console.log(1);
-        if(!((Math.abs(G[temp_x][temp_y].x - q_goal[0]) < (eps/2)) && (Math.abs(G[temp_x][temp_y].y - q_goal[1]) < (eps/2)))){
-            // console.log(2);
-            G[temp_x][temp_y].queued = true;
-            G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
-            G[temp_x][temp_y].priority = calc_priority([temp_x, temp_y], q_goal);
-            G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
-
-            minheap_insert(visit_queue, [temp_x, temp_y]);
-            draw_2D_configuration([G[temp_x][temp_y].x, G[temp_x][temp_y].y], "queued");
-            if (G[arr[0]][arr[1]].distance + 1 < G[temp_x][temp_y].distance){
-                G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
-                G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
+        if(!G[temp_x][temp_y].queued){
+            if(!((Math.abs(G[temp_x][temp_y].x - q_goal[0]) < (eps/2)) && (Math.abs(G[temp_x][temp_y].y - q_goal[1]) < (eps/2)))){
+                // console.log(2);
                 G[temp_x][temp_y].queued = true;
+                G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
                 G[temp_x][temp_y].priority = calc_priority([temp_x, temp_y], q_goal);
-                // minheap_insert(visit_queue, [arr[0], arr[1] - 1, G[arr[0]][arr[1] - 1].priority]);
+                G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
+
+                minheap_insert(visit_queue, [temp_x, temp_y]);
+                draw_2D_configuration([G[temp_x][temp_y].x, G[temp_x][temp_y].y], "queued");
+                // if (G[arr[0]][arr[1]].distance + 1 < G[temp_x][temp_y].distance){
+                //     G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
+                //     G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
+                //     G[temp_x][temp_y].priority = calc_priority([temp_x, temp_y], q_goal);
+                // }
+            }
+            else{
+                search_iterate = false;
+                drawHighlightedPathGraph(G[temp_x][temp_y]);
+                return "succeeded";
             }
         }
         else{
-            search_iterate = false;
-            drawHighlightedPathGraph(G[temp_x][temp_y]);
-            return "succeeded";
+            if (G[arr[0]][arr[1]].distance + 1 < G[temp_x][temp_y].distance){
+                G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
+                G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
+                G[temp_x][temp_y].priority = calc_priority([temp_x, temp_y], q_goal);
+            }
         }
     }
     return "null";
