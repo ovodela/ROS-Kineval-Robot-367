@@ -1,4 +1,4 @@
-//CI grader generates report at 21-01-2023-02-23-50
+//CI grader generates report at 24-01-2023-22-04-16
 grade = 
 {
   "omkarv": {
@@ -19,16 +19,80 @@ grade =
         "comments": "Passing 3 out of 3 tests"
       },
       "PathPlan_Heap": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          ""
-        ]
+          "10 out of 10 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          },
+          "Test 1": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          },
+          "Test 2": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          },
+          "Test 3": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          },
+          "Test 4": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          },
+          "Test 5": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          },
+          "Test 6": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          },
+          "Test 7": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          },
+          "Test 8": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          },
+          "Test 9": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          }
+        }
       },
       "PathPlan_AStar": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "0 out of 5 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+          },
+          "Test 1": {
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+          },
+          "Test 2": {
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+          },
+          "Test 3": {
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+          },
+          "Test 4": {
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+          }
+        }
       },
       "Pendularm_Euler": {
         "status": "PENDING",
