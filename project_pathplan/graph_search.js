@@ -151,6 +151,9 @@ function checkNode(arr, temp_x, temp_y){
                 // }
             }
             else{
+                G[temp_x][temp_y].distance = G[arr[0]][arr[1]].distance + 1;
+                G[temp_x][temp_y].parent = G[arr[0]][arr[1]];
+                G[temp_x][temp_y].priority = calc_priority([temp_x, temp_y], q_goal);
                 search_iterate = false;
                 drawHighlightedPathGraph(G[temp_x][temp_y]);
                 return "succeeded";
