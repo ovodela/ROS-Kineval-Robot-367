@@ -1,4 +1,4 @@
-//CI grader generates report at 24-01-2023-22-04-16
+//CI grader generates report at 26-01-2023-02-46-31
 grade = 
 {
   "omkarv": {
@@ -67,30 +67,30 @@ grade =
         }
       },
       "PathPlan_AStar": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "0 out of 5 test cases passed"
+          "5 out of 5 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 1": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 2": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 3": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 4": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
