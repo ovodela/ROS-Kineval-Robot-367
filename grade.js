@@ -1,4 +1,4 @@
-//CI grader generates report at 31-01-2023-06-24-23
+//CI grader generates report at 01-02-2023-10-23-09
 grade = 
 {
   "omkarv": {
@@ -97,20 +97,46 @@ grade =
       "Pendularm_Euler": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "0 out of 2 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Test failed\\n'"
+          },
+          "Test 1": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Test failed\\n'"
+          }
+        }
       },
       "Pendularm_VelocityVerlet": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "0 out of 2 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Test failed\\n'"
+          },
+          "Test 1": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Test failed\\n'"
+          }
+        }
       },
       "Pendularm_PID": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "0 out of 1 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: PID test with velocity verlet failed\\n'"
+          }
+        }
       },
       "FK_MatrixRoutines": {
         "status": "PENDING",
