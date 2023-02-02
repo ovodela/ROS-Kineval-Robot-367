@@ -8,16 +8,27 @@ function update_pendulum_state(numerical_integrator, pendulum, dt, gravity) {
     if (numerical_integrator === "euler") {
 
     // STENCIL: a correct Euler integrator is REQUIRED for assignment
+        pendulum.angle_previous = pendulum.angle;
+        pendulum.angle_dot_dot = pendulum_acceleration(pendulum, gravity)
+        pendulum.angle = pendulum.angle_previous + pendulum.angle_dot * dt;
+        pendulum.angle_dot = pendulum.angle_dot + pendulum.angle_dot_dot * dt;
+
 
     }
     else if (numerical_integrator === "verlet") {
 
     // STENCIL: basic Verlet integration
+        pendulum.angle_previous = pendulum.angle;
+    
 
     }
     else if (numerical_integrator === "velocity verlet") {
 
     // STENCIL: a correct velocity Verlet integrator is REQUIRED for assignment
+        pendulum.angle_previous = pendulum.angle;
+        pendulum.angle_dot_dot = pendulum_acceleration(pendulum, gravity)
+        pendulum.angle = pendulum.angle_previous + pendulum.angle_dot * dt + .5 * pendulum.angle_dot_dot * dt * dt;
+        pendulum.angle_dot = pendulum.angle_dot + pendulum.angle_dot_dot * dt;
 
     }
     else if (numerical_integrator === "runge-kutta") {
