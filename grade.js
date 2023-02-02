@@ -1,4 +1,4 @@
-//CI grader generates report at 01-02-2023-10-23-09
+//CI grader generates report at 02-02-2023-10-09-42
 grade = 
 {
   "omkarv": {
@@ -113,12 +113,12 @@ grade =
       "Pendularm_VelocityVerlet": {
         "status": "PENDING",
         "comments": [
-          "0 out of 2 test cases passed"
+          "1 out of 2 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Test failed\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 1": {
             "Status": "Failed",
