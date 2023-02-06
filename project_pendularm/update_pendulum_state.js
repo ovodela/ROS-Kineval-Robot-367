@@ -16,6 +16,7 @@ function update_pendulum_state(numerical_integrator, pendulum, dt, gravity) {
         pendulum.angle_dot = pendulum.angle_dot + pendulum.angle_dot_dot * dt;
         */
 
+        pendulum.angle_previous = pendulum.angle;
         pendulum.angle_dot = pendulum.angle_dot + pendulum_acceleration(pendulum, gravity) * dt;
         pendulum.angle = pendulum.angle + pendulum.angle_dot * dt;
     }
@@ -35,7 +36,7 @@ function update_pendulum_state(numerical_integrator, pendulum, dt, gravity) {
         pendulum.angle = pendulum.angle_previous + pendulum.angle_dot * dt + .5 * pendulum.angle_dot_dot * dt * dt;
         pendulum.angle_dot = pendulum.angle_dot + pendulum.angle_dot_dot * dt;
         */
-        
+        pendulum.angle_previous = pendulum.angle;
         let [updatedPendulum, updatedTime] = init_verlet_integrator(pendulum, t, gravity);
         pendulum.angle = pendulum.angle + updatedPendulum.angle_dot * dt + 0.5 * pendulum_acceleration(updatedPendulum, gravity) * dt * dt;
         let updatedPendulum2 = {...pendulum};
@@ -75,7 +76,7 @@ function init_verlet_integrator(pendulum, t, gravity) {
 
 function set_PID_parameters(pendulum) {
     // STENCIL: change pid parameters
-    pendulum.servo = {kp:0.5, kd:0.02, ki:0.5};  // no control
+    pendulum.servo = {kp:0, kd:0, ki:0};  // no control
     return pendulum;
 }
 
