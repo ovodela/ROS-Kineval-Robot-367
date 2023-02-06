@@ -17,8 +17,8 @@ function update_pendulum_state(numerical_integrator, pendulum, dt, gravity) {
         */
 
         pendulum.angle_previous = pendulum.angle;
-        pendulum.angle_dot = pendulum.angle_dot + pendulum_acceleration(pendulum, gravity) * dt;
-        pendulum.angle = pendulum.angle + pendulum.angle_dot * dt;
+        pendulum.angle_dot = pendulum.angle_dot + pendulum_acceleration(pendulum, gravity) * dt + (Math.PI/180);
+        pendulum.angle = pendulum.angle + pendulum.angle_dot * dt + (Math.PI/180);
     }
     else if (numerical_integrator === "verlet") {
 
