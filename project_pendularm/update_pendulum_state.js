@@ -64,7 +64,7 @@ function pendulum_acceleration(pendulum, gravity) {
     // return -gravity * Math.sin(pendulum.angle);
 
     let term1 = gravity * Math.sin(pendulum.angle) / pendulum.length; // g sin / l
-    let term2 = -gravity * Math.sin(pendulum.angle) / pendulum.length; // torque / ml^2
+    let term2 = -gravity * Math.sin(pendulum.angle) / pendulum.length; // t / ml^2
     return -term1 + term2
 }
 
@@ -89,12 +89,15 @@ function PID(pendulum, accumulated_error, dt) {
     // STENCIL: implement PID controller
     // return: updated output in pendulum.control and accumulated_error
 
-    // pendulum.servo.error = pendulum."expected" - pendulum.angle
+    pendulum.servo.error = pendulum.desired - pendulum.angle;
+    accumulated_error = accumulated_error + pendulum.servo.error * dt;
+    let derivative = (pendulum.servo.error - accumulated_error) / dt;
+    pendulum.control = pendulum.servo.error * pendulum.servo.kp + pendulum.servo.ki * accumulated_error + pendulum.servo.kd * derivative;
 
-    let error = pendulum.servo.expected - pendulum.angle;
-    let derivative = (error - accumulated_error) / dt;
-    accumulated_error = accumulated_error + error * dt;
-    pendulum.control = pendulum.servo.kp * error + pendulum.servo.ki * accumulated_error + pendulum.servo.kd * derivative;
+    // let error = pendulum.servo.expected - pendulum.angle;
+    // let derivative = (error - accumulated_error) / dt;
+    // accumulated_error = accumulated_error + error * dt;
+    // pendulum.control = pendulum.servo.kp * error + pendulum.servo.ki * accumulated_error + pendulum.servo.kd * derivative;
     
     return [pendulum, accumulated_error];
 }
