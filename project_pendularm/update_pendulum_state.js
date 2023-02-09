@@ -17,8 +17,9 @@ function update_pendulum_state(numerical_integrator, pendulum, dt, gravity) {
         */
 
         pendulum.angle_previous = pendulum.angle;
-        pendulum.angle_dot = pendulum.angle_dot + pendulum_acceleration(pendulum, gravity) * dt;
-        pendulum.angle = pendulum.angle + pendulum.angle_dot * dt;
+        let accel_t = pendulum_acceleration(pendulum, gravity);
+        pendulum.angle = pendulum.angle_previous + pendulum.angle_dot * dt;
+        pendulum.angle_dot = pendulum.angle_dot + accel_t * dt;
     }
     else if (numerical_integrator === "verlet") {
 
@@ -32,7 +33,7 @@ function update_pendulum_state(numerical_integrator, pendulum, dt, gravity) {
     // STENCIL: a correct velocity Verlet integrator is REQUIRED for assignment
         
         pendulum.angle_previous = pendulum.angle;
-        let accel_t = pendulum_acceleration(pendulum, gravity)
+        let accel_t = pendulum_acceleration(pendulum, gravity);
         pendulum.angle = pendulum.angle_previous + pendulum.angle_dot * dt + .5 * accel_t * dt * dt;
         pendulum.angle_dot = pendulum.angle_dot + (pendulum_acceleration(pendulum, gravity) + accel_t) * dt / 2;
         
