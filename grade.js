@@ -1,5 +1,5 @@
-//CI grader generates report at 08-02-2023-14-47-03
-//Commit hash: 74b20f8
+//CI grader generates report at 08-02-2023-23-21-51
+//Commit hash: 83c523f
 grade = 
 {
   "omkarv": {
@@ -112,18 +112,18 @@ grade =
         }
       },
       "Pendularm_VelocityVerlet": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "0 out of 2 test cases passed"
+          "2 out of 2 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Test failed\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 1": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Test failed\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
@@ -135,7 +135,7 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: PID overshoot too large or it diverges, please tune your PID values\\n'"
+            "Stderr": "b'[ERROR]: PID test with velocity verlet failed\\n'"
           }
         }
       },
