@@ -16,8 +16,8 @@ function update_pendulum_state(numerical_integrator, pendulum, dt, gravity) {
         pendulum.angle_dot = pendulum.angle_dot + pendulum.angle_dot_dot * dt;
         */
 
-        pendulum.angle_previous = pendulum.angle;
         let accel_t = pendulum_acceleration(pendulum, gravity);
+        pendulum.angle_previous = pendulum.angle;
         pendulum.angle = pendulum.angle_previous + pendulum.angle_dot * dt;
         pendulum.angle_dot = pendulum.angle_dot + accel_t * dt;
     }
@@ -65,8 +65,8 @@ function pendulum_acceleration(pendulum, gravity) {
     // return -gravity * Math.sin(pendulum.angle);
 
     let term1 = gravity * Math.sin(pendulum.angle) / pendulum.length; // g sin / l
-    let term2 = -gravity * Math.sin(pendulum.angle) / pendulum.length; // t / ml^2
-    return -term1 + term2
+    let term2 = pendulum.control / (pendulum.mass * pendulum.length * pendulum.length); // t / ml^2
+    return -term1 + term2;
 }
 
 function init_verlet_integrator(pendulum, t, gravity) {
