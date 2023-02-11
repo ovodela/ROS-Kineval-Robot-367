@@ -1,5 +1,5 @@
-//CI grader generates report at 10-02-2023-11-17-18
-//Commit hash: 01e0065
+//CI grader generates report at 10-02-2023-21-58-32
+//Commit hash: b6dd095
 grade = 
 {
   "omkarv": {
@@ -96,9 +96,9 @@ grade =
         }
       },
       "Pendularm_Euler": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "1 out of 2 test cases passed"
+          "2 out of 2 test cases passed"
         ],
         "test results": {
           "Test 0": {
@@ -106,8 +106,8 @@ grade =
             "Stderr": "b''"
           },
           "Test 1": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Test failed\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
@@ -135,7 +135,7 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: PID test with velocity verlet failed\\n'"
+            "Stderr": "b'[ERROR]: PID overshoot too large or it diverges, please tune your PID values\\n'"
           }
         }
       },
