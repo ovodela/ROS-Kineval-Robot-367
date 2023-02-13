@@ -1,5 +1,5 @@
-//CI grader generates report at 13-02-2023-17-16-06
-//Commit hash: 8e39ac8
+//CI grader generates report at 13-02-2023-18-52-58
+//Commit hash: 9d44462
 grade = 
 {
   "omkarv": {
@@ -16,8 +16,10 @@ grade =
         ]
       },
       "ROS Pub/Sub": {
-        "status": "CHECK",
-        "comments": "Passing 3 out of 3 tests"
+        "status": "PENDING",
+        "comments": [
+          "Passing 0 of 3 tests"
+        ]
       },
       "PathPlan_Heap": {
         "status": "PASS",
@@ -96,14 +98,14 @@ grade =
         }
       },
       "Pendularm_Euler": {
-        "status": "PASS",
+        "status": "PENDING",
         "comments": [
-          "2 out of 2 test cases passed"
+          "1 out of 2 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Test failed\\n'"
           },
           "Test 1": {
             "Status": "Succeed",
@@ -128,14 +130,14 @@ grade =
         }
       },
       "Pendularm_PID": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "0 out of 1 test cases passed"
+          "1 out of 1 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: PID overshoot too large or it diverges, please tune your PID values\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
