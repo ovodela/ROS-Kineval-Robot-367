@@ -18,7 +18,7 @@ function update_pendulum_state(numerical_integrator, pendulum, dt, gravity) {
 
         let accel_t = pendulum_acceleration(pendulum, gravity);
         pendulum.angle_previous = pendulum.angle;
-        pendulum.angle = pendulum.angle_previous + pendulum.angle_dot * dt;
+        pendulum.angle = (pendulum.angle_previous + pendulum.angle_dot * dt) % (2*Math.PI);
         pendulum.angle_dot = pendulum.angle_dot + accel_t * dt;
     }
     else if (numerical_integrator === "verlet") {
@@ -34,7 +34,7 @@ function update_pendulum_state(numerical_integrator, pendulum, dt, gravity) {
         
         pendulum.angle_previous = pendulum.angle;
         let accel_t = pendulum_acceleration(pendulum, gravity);
-        pendulum.angle = pendulum.angle_previous + pendulum.angle_dot * dt + .5 * accel_t * dt * dt;
+        pendulum.angle = (pendulum.angle_previous + pendulum.angle_dot * dt + .5 * accel_t * dt * dt) % (2*Math.PI);
         pendulum.angle_dot = pendulum.angle_dot + (pendulum_acceleration(pendulum, gravity) + accel_t) * dt / 2;
         
         // pendulum.angle_previous = pendulum.angle;
@@ -82,7 +82,7 @@ function init_verlet_integrator(pendulum, t, gravity) {
 
 function set_PID_parameters(pendulum) {
     // STENCIL: change pid parameters
-    pendulum.servo = {kp:0.1, kd:0.01, ki:0.1};  // no control
+    pendulum.servo = {kp:500, kd:12, ki:75};  // no control
     return pendulum;
 }
 
@@ -90,10 +90,11 @@ function PID(pendulum, accumulated_error, dt) {
     // STENCIL: implement PID controller
     // return: updated output in pendulum.control and accumulated_error
 
+    //let past_error = pendulum.servo.error;
     pendulum.servo.error = pendulum.desired - pendulum.angle;
-    accumulated_error = accumulated_error + pendulum.servo.error * dt;
-    let derivative = (pendulum.servo.error - accumulated_error) / dt;
-    pendulum.control = pendulum.servo.error * pendulum.servo.kp + pendulum.servo.ki * accumulated_error + pendulum.servo.kd * derivative;
+    accumulated_error = accumulated_error + pendulum.servo.error;
+    let derivative = (-pendulum.angle_dot) / dt;
+    pendulum.control = pendulum.servo.error * pendulum.servo.kp + pendulum.servo.ki * accumulated_error * dt + pendulum.servo.kd * derivative;
 
     // let error = pendulum.servo.expected - pendulum.angle;
     // let derivative = (error - accumulated_error) / dt;
