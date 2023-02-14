@@ -1,5 +1,5 @@
-//CI grader generates report at 13-02-2023-23-06-07
-//Commit hash: 54c334c
+//CI grader generates report at 14-02-2023-00-37-45
+//Commit hash: e680486
 grade = 
 {
   "omkarv": {
@@ -96,14 +96,14 @@ grade =
         }
       },
       "Pendularm_Euler": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "1 out of 2 test cases passed"
+          "2 out of 2 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Test failed\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 1": {
             "Status": "Succeed",
