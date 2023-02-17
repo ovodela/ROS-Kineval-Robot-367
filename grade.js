@@ -1,5 +1,5 @@
-//CI grader generates report at 16-02-2023-23-26-31
-//Commit hash: fb9f10d
+//CI grader generates report at 17-02-2023-01-05-14
+//Commit hash: c32fd27
 grade = 
 {
   "omkarv": {
@@ -147,7 +147,7 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'matrix_multiply undefined\\nmatrix_transpose undefined\\nvector_normalize undefined\\nvector_cross undefined\\ngenerate_identity undefined\\ngenerate_translation_matrix undefined\\ngenerate_rotation_matrix_X undefined\\ngenerate_rotation_matrix_Y undefined\\ngenerate_rotation_matrix_Z undefined\\nAt least one function undefined\\n'"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_MatrixRoutines/test_0.js:209\\n    if (m1[0].length !== m2.length) {\\n              ^\\n\\nTypeError: Cannot read property 'length' of undefined\\n    at matrix_multiply (/omkarv/FK_MatrixRoutines/test_0.js:209:15)\\n    at vector_normalize (/omkarv/FK_MatrixRoutines/test_0.js:299:25)\\n    at tes"
           }
         }
       },
@@ -159,23 +159,23 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'Robot mr2 joints transformation undefined\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_0.js:1021\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_0.js:1021:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_0.js:851:13)\\n    at Object.<anonymous> "
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "b'Robot urdf_example joints transformation undefined\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_1.js:904\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_1.js:904:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_1.js:734:13)\\n    at Object.<anonymous> (/"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "b'Robot crawler joints transformation undefined\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_2.js:1156\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_2.js:1156:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_2.js:986:13)\\n    at Object.<anonymous> "
           },
           "Test 3": {
             "Status": "Failed",
-            "Stderr": "b'Robot br2 joints transformation undefined\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_3.js:935\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_3.js:935:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_3.js:765:13)\\n    at Object.<anonymous> (/"
           },
           "Test 4": {
             "Status": "Failed",
-            "Stderr": "b'Robot y joints transformation undefined\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_4.js:929\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_4.js:929:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_4.js:759:13)\\n    at Object.<anonymous> (/"
           },
           "Test 5": {
             "Status": "Succeed",
