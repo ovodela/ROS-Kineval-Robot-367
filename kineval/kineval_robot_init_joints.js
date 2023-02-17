@@ -36,15 +36,28 @@ kineval.initRobotJoints = function initRobotJoints() {
     //   additionally specify parent and child joints for each link
 
 
-
-
-
-
-
+        if (robot.links[robot.joints[x].parent].child_joints === undefined) {
+            robot.links[robot.joints[x].parent].child_joints = [];
+        }
+        robot.links[robot.joints[x].parent].child_joints.push(x);
+        robot.links[robot.joints[x].child].parent_joint = x;
 
 /* STENCIL END */ 
 
     }
+
+    //Not Needed?
+    for (x in robot.joints) {
+        kineval.resetPose(x);
+    }
+
+    // set the active gripper to none
+    kineval.setActiveGripper(undefined);
+
+    // reset setpoint variables
+    kineval.setpoint = {};
+    kineval.setpoint.pos = new THREE.Vector3();
+    kineval.setpoint.rotq = new THREE.Quaternion();
 
 }
 

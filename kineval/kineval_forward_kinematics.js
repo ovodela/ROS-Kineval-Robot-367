@@ -24,6 +24,7 @@ kineval.robotForwardKinematics = function robotForwardKinematics () {
     }
 
     // STENCIL: call kineval.buildFKTransforms();
+    kineval.buildFKTransforms();
 }
 
     // STENCIL: implement buildFKTransforms, which kicks off
@@ -46,3 +47,111 @@ kineval.robotForwardKinematics = function robotForwardKinematics () {
     //   coordinate conversion is needed for kineval/threejs coordinates:
     //
 
+    //
+    
+    function updateRobotHeadingAndLateral() { //Need change to recieve input
+        // Set robot_heading to unit vector pointing in z-axis direction
+        robot_heading = [
+        [0],
+        [0],
+        [1],
+        [0]
+        ];
+    
+        // Set robot_lateral to unit vector pointing in x-axis direction
+        robot_lateral = [
+        [1],
+        [0],
+        [0],
+        [0]
+        ];
+    }  
+  
+  
+  
+  
+
+kineval.buildFKTransforms = function buildFKTransforms() {
+    // generate identity matrix
+    var identity = generate_identity();
+
+    // initialize robot base matrix and position
+    var robot_base_matrix = generate_identity();
+    var robot_base_position = [[0], [0], [0], [1]];
+
+    // if using keyboard interface, transform robot heading and lateral into world coordinates
+    if (typeof robot_heading !== 'undefined' && typeof robot_lateral !== 'undefined') {
+        robot_heading = matrix_transpose(matrix_pseudoinverse(robot_base_matrix))[0];
+        robot_lateral = matrix_transpose(matrix_pseudoinverse(robot_base_matrix))[1];
+    }
+
+    // recursive traversal over links and joints starting from base
+    traverseFKBase(robot.joints[robot.base], robot_base_matrix, robot_base_position, identity);
+    
+}
+
+function traverseFKBase(joint, parent_matrix, parent_position, cumulative_rotation) {
+    var child_link = joint.child;
+
+    // apply joint rotation matrix
+    var joint_rotation_matrix = generate_rotation_matrix_Z(joint.angle);
+    var cumulative_rotation = matrix_multiply(cumulative_rotation, joint_rotation_matrix);
+
+    // apply link translation matrix
+    var link_translation_matrix = generate_translation_matrix(child_link.origin.xyz[0], child_link.origin.xyz[1], child_link.origin.xyz[2]);
+    var link_position = matrix_multiply(parent_matrix, matrix_multiply(cumulative_rotation, link_translation_matrix));
+    var link_matrix = matrix_multiply(cumulative_rotation, link_translation_matrix);
+
+    // set joint FK transform
+    joint.transform = link_matrix;
+
+    traverseFKLink(child_link, link_matrix, link_position, cumulative_rotation);
+
+}
+
+function traverseFKLink(link, parent_matrix, parent_position, cumulative_rotation) {
+    var child_joint = link.children[0];
+
+    // apply link transform matrix
+    var link_matrix = generate_translation_matrix(link.com.xyz[0], link.com.xyz[1], link.com.xyz[2]);
+    var link_position = matrix_multiply(parent_matrix, matrix_multiply(cumulative_rotation, link_matrix));
+    var link_rotation_matrix = generate_rotation_matrix_X(link.inertial.R[0][0]);
+    link_rotation_matrix = matrix_multiply(generate_rotation_matrix_Y(link.inertial.R[1][1]), link_rotation_matrix);
+    link_rotation_matrix = matrix_multiply(generate_rotation_matrix_Z(link.inertial.R[2][2]), link_rotation_matrix);
+    var link_matrix = matrix_multiply(link_position, matrix_multiply(link_rotation_matrix, generate_translation_matrix(-link.com.xyz[0], -link.com.xyz[1], -link.com.xyz[2])));
+
+    // set link FK transform
+    link.transform = link_matrix;
+
+    traverseFKJoint(child_joint, link_matrix, link_position, cumulative_rotation);
+
+}
+
+function traverseFKJoint(joint, parent_matrix, parent_position, cumulative_rotation) {
+    // get rotation matrix from joint angle
+    var rotation_matrix = generate_rotation_matrix_Z(joint.angle);
+  
+    // apply joint rotation
+    var joint_matrix = matrix_multiply(parent_matrix, rotation_matrix);
+  
+    // apply translation to get child link to correct position relative to parent joint
+    var translation_matrix = generate_translation_matrix(joint.origin.xyz[0], joint.origin.xyz[1], joint.origin.xyz[2]);
+    var link_matrix = matrix_multiply(joint_matrix, translation_matrix);
+  
+    // update link matrix with any additional transform
+    if (joint.transform) {
+      var transform_matrix = matrix_multiply(joint_matrix, joint.transform);
+      link_matrix = matrix_multiply(transform_matrix, translation_matrix);
+    }
+  
+    // save the link matrix for future use in kineval.updateLinkTransforms()
+    kineval.link_transforms[joint.child] = link_matrix;
+  
+    // update cumulative rotation matrix for child links
+    var next_rotation = matrix_multiply(cumulative_rotation, rotation_matrix);
+  
+    // traverse the child link
+    traverseFKLink(robot.links[joint.child], link_matrix, parent_position, next_rotation);
+
+}
+  
