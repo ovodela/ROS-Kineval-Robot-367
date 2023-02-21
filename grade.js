@@ -1,5 +1,5 @@
-//CI grader generates report at 21-02-2023-15-23-15
-//Commit hash: 6045d50
+//CI grader generates report at 21-02-2023-17-10-08
+//Commit hash: 62346be
 grade = 
 {
   "omkarv": {
@@ -149,7 +149,7 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_MatrixRoutines/test_0.js:209\\n    if (m1[0].length !== m2.length) {\\n              ^\\n\\nTypeError: Cannot read property 'length' of undefined\\n    at matrix_multiply (/omkarv/FK_MatrixRoutines/test_0.js:209:15)\\n    at vector_normalize (/omkarv/FK_MatrixRoutines/test_0.js:299:25)\\n    at tes"
+            "Stderr": "b'matrix_multiply test pass\\nmatrix_transpose test pass\\nvector_normalize test pass\\nvector_cross test fail\\ngenerate_identity test pass\\ngenerate_translation_matrix test pass\\ngenerate_rotation_matrix_X test pass\\ngenerate_rotation_matrix_Y test pass\\ngenerate_rotation_matrix_Z test pass\\n[ERROR]: Test fail\\n'"
           }
         }
       },
@@ -161,23 +161,23 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_0.js:1021\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_0.js:1021:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_0.js:851:13)\\n    at Object.<anonymous> "
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_0.js:498\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_0.js:498:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_0.js:1272:42)\\n    at Object.robotForwardKinem"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_1.js:904\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_1.js:904:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_1.js:734:13)\\n    at Object.<anonymous> (/"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_1.js:381\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_1.js:381:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_1.js:1155:42)\\n    at Object.robotForwardKinem"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_2.js:1156\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_2.js:1156:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_2.js:986:13)\\n    at Object.<anonymous> "
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_2.js:633\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_2.js:633:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_2.js:1407:42)\\n    at Object.robotForwardKinem"
           },
           "Test 3": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_3.js:935\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_3.js:935:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_3.js:765:13)\\n    at Object.<anonymous> (/"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_3.js:412\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_3.js:412:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_3.js:1186:42)\\n    at Object.robotForwardKinem"
           },
           "Test 4": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_4.js:929\\n        kineval.resetPose(x);\\n                ^\\n\\nTypeError: kineval.resetPose is not a function\\n    at Object.initRobotJoints (/omkarv/FK_Transforms/test_4.js:929:17)\\n    at Object.initRobot (/omkarv/FK_Transforms/test_4.js:759:13)\\n    at Object.<anonymous> (/"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_4.js:406\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_4.js:406:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_4.js:1180:42)\\n    at Object.robotForwardKinem"
           },
           "Test 5": {
             "Status": "Succeed",
