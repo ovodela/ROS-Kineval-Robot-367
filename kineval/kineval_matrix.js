@@ -40,9 +40,9 @@ function matrix_copy(m1) {
 function matrix_multiply(m1, m2) {
     // returns 2D array that is the result of m1*m2
 
-    if (m1[0].length !== m2.length) {
-      throw new Error("Invalid matrix dimensions");
-    }
+    // if (m1[0].length !== m2.length) {
+    //   throw new Error("Invalid matrix dimensions");
+    // }
     
     let result = new Array(m1.length);
     for (let i = 0; i < m1.length; i++) {
