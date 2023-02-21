@@ -47,17 +47,17 @@ kineval.initRobotJoints = function initRobotJoints() {
     }
 
     //Not Needed?
-    for (x in robot.joints) {
-        kineval.resetPose(x);
-    }
+    // for (x in robot.joints) {
+    //     kineval.resetPose(x);
+    // }
 
-    // set the active gripper to none
-    kineval.setActiveGripper(undefined);
+    // // set the active gripper to none
+    // kineval.setActiveGripper(undefined);
 
-    // reset setpoint variables
-    kineval.setpoint = {};
-    kineval.setpoint.pos = new THREE.Vector3();
-    kineval.setpoint.rotq = new THREE.Quaternion();
+    // // reset setpoint variables
+    // kineval.setpoint = {};
+    // kineval.setpoint.pos = new THREE.Vector3();
+    // kineval.setpoint.rotq = new THREE.Quaternion();
 
 }
 
