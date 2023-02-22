@@ -75,23 +75,23 @@ function matrix_transpose(m) {
 function matrix_pseudoinverse(m) {
     // returns pseudoinverse of matrix m
 
-    let svd = numeric.svd(m);
-    let s = svd.S;
-    let u = svd.U;
-    let v = svd.V;
+    // let svd = numeric.svd(m);
+    // let s = svd.S;
+    // let u = svd.U;
+    // let v = svd.V;
     
-    for (let i = 0; i < s.length; i++) {
-      s[i] = Math.abs(s[i]) > 1e-10 ? 1/s[i] : 0;
-    }
+    // for (let i = 0; i < s.length; i++) {
+    //   s[i] = Math.abs(s[i]) > 1e-10 ? 1/s[i] : 0;
+    // }
     
-    let s_inv = numeric.diag(s);
-    let u_t = matrix_transpose(u);
-    let v_t = matrix_transpose(v);
+    // let s_inv = numeric.diag(s);
+    // let u_t = matrix_transpose(u);
+    // let v_t = matrix_transpose(v);
     
-    let v_t_s_inv = matrix_multiply(v_t, s_inv);
-    let s_inv_u_t = matrix_multiply(s_inv, u_t);
+    // let v_t_s_inv = matrix_multiply(v_t, s_inv);
+    // let s_inv_u_t = matrix_multiply(s_inv, u_t);
     
-    return matrix_multiply(v_t_s_inv, s_inv_u_t);
+    // return matrix_multiply(v_t_s_inv, s_inv_u_t);
 }
   
   
