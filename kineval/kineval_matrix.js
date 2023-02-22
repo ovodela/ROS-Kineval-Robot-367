@@ -75,23 +75,15 @@ function matrix_transpose(m) {
 function matrix_pseudoinverse(m) {
     // returns pseudoinverse of matrix m
 
-    // let svd = numeric.svd(m);
-    // let s = svd.S;
-    // let u = svd.U;
-    // let v = svd.V;
-    
-    // for (let i = 0; i < s.length; i++) {
-    //   s[i] = Math.abs(s[i]) > 1e-10 ? 1/s[i] : 0;
-    // }
-    
-    // let s_inv = numeric.diag(s);
-    // let u_t = matrix_transpose(u);
-    // let v_t = matrix_transpose(v);
-    
-    // let v_t_s_inv = matrix_multiply(v_t, s_inv);
-    // let s_inv_u_t = matrix_multiply(s_inv, u_t);
-    
-    // return matrix_multiply(v_t_s_inv, s_inv_u_t);
+    var eps = 1e-16;
+    var mt = matrix_transpose(m);
+    var mtm = matrix_multiply(mt, m);
+    var mtm_inv = matrix_inverse(mtm);
+    if (!mtm_inv) {
+        return null; // matrix is singular
+    }
+    var m_pinv = matrix_multiply(mtm_inv, mt);
+    return m_pinv;
 }
   
   
