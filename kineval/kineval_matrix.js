@@ -145,16 +145,11 @@ function vector_normalize(v) {
 function vector_cross(a, b) {
     // return cross product of vector a and b with both has 3 dimensions
 
-    let ax = a[0][0], ay = a[1][0], az = a[2][0];
-    let bx = b[0][0], by = b[1][0], bz = b[2][0];
-    
-    let cx = ay*bz - az*by;
-    let cy = az*bx - ax*bz;
-    let cz = ax*by - ay*bx;
-    
-    let c = [[cx], [cy], [cz], [1]];
-    
-    return c;
+    const result = [0, 0, 0];
+    result[0] = a[1] * b[2] - a[2] * b[1];
+    result[1] = a[2] * b[0] - a[0] * b[2];
+    result[2] = a[0] * b[1] - a[1] * b[0];
+    return result;
 }
   
 
