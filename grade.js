@@ -1,5 +1,5 @@
-//CI grader generates report at 22-02-2023-18-50-15
-//Commit hash: b569077
+//CI grader generates report at 22-02-2023-20-32-00
+//Commit hash: 14bdfb4
 grade = 
 {
   "omkarv": {
@@ -159,23 +159,23 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_0.js:484\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_0.js:484:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_0.js:1267:25)\\n"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_0.js:501\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_0.js:501:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_0.js:1259:42)\\n    at Obje"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_1.js:367\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_1.js:367:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_1.js:1150:25)\\n"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_1.js:384\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_1.js:384:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_1.js:1142:42)\\n    at Obje"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_2.js:619\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_2.js:619:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_2.js:1402:25)\\n"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_2.js:636\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_2.js:636:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_2.js:1394:42)\\n    at Obje"
           },
           "Test 3": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_3.js:398\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_3.js:398:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_3.js:1181:25)\\n"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_3.js:415\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_3.js:415:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_3.js:1173:42)\\n    at Obje"
           },
           "Test 4": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_4.js:392\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_4.js:392:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_4.js:1175:25)\\n"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_4.js:409\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_4.js:409:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_4.js:1167:42)\\n    at Obje"
           },
           "Test 5": {
             "Status": "Succeed",
