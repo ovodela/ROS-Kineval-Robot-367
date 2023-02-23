@@ -71,7 +71,7 @@ function matrix_transpose(m) {
     return result;
 }
   
-function matrix_inverse(m) {
+function matrix_inverse(m, eps) {
     var n = m.length;
     var p = m[0].length;
     if (n != p) {
@@ -121,7 +121,7 @@ function matrix_pseudoinverse(m) {
     var eps = 1e-16;
     var mt = matrix_transpose(m);
     var mtm = matrix_multiply(mt, m);
-    var mtm_inv = matrix_inverse(mtm);
+    var mtm_inv = matrix_inverse(mtm, eps);
     if (!mtm_inv) {
         return null; // matrix is singular
     }
