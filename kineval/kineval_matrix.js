@@ -71,6 +71,49 @@ function matrix_transpose(m) {
     return result;
 }
   
+function matrix_inverse(m) {
+    var n = m.length;
+    var p = m[0].length;
+    if (n != p) {
+      return null; // matrix is not square
+    }
+    var a = [];
+    for (var i = 0; i < n; i++) {
+      a.push([]);
+      for (var j = 0; j < n; j++) {
+        a[i].push(m[i][j]);
+      }
+      for (var j = n; j < 2*n; j++) {
+        a[i].push(i == j-n ? 1 : 0);
+      }
+    }
+    for (var i = 0; i < n; i++) {
+      var pivot = a[i][i];
+      if (Math.abs(pivot) < eps) {
+        return null; // matrix is singular
+      }
+      for (var j = i; j < 2*n; j++) {
+        a[i][j] /= pivot;
+      }
+      for (var j = 0; j < n; j++) {
+        if (j != i) {
+          var factor = a[j][i];
+          for (var k = i; k < 2*n; k++) {
+            a[j][k] -= factor * a[i][k];
+          }
+        }
+      }
+    }
+    var inv = [];
+    for (var i = 0; i < n; i++) {
+      inv.push([]);
+      for (var j = n; j < 2*n; j++) {
+        inv[i].push(a[i][j]);
+      }
+    }
+    return inv;
+}
+  
 
 function matrix_pseudoinverse(m) {
     // returns pseudoinverse of matrix m
