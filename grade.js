@@ -1,5 +1,5 @@
-//CI grader generates report at 22-02-2023-22-13-10
-//Commit hash: 4ad3328
+//CI grader generates report at 22-02-2023-23-53-57
+//Commit hash: 0266a35
 grade = 
 {
   "omkarv": {
@@ -159,23 +159,23 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_0.js:501\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_0.js:501:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_0.js:1259:42)\\n    at Obje"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_0.js:512\\n      if (Math.abs(pivot) < eps) {\\n                            ^\\n\\nReferenceError: eps is not defined\\n    at matrix_inverse (/omkarv/FK_Transforms/test_0.js:512:29)\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_0.js:544:19)\\n    at Object.buildFKTransf"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_1.js:384\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_1.js:384:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_1.js:1142:42)\\n    at Obje"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_1.js:395\\n      if (Math.abs(pivot) < eps) {\\n                            ^\\n\\nReferenceError: eps is not defined\\n    at matrix_inverse (/omkarv/FK_Transforms/test_1.js:395:29)\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_1.js:427:19)\\n    at Object.buildFKTransf"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_2.js:636\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_2.js:636:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_2.js:1394:42)\\n    at Obje"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_2.js:647\\n      if (Math.abs(pivot) < eps) {\\n                            ^\\n\\nReferenceError: eps is not defined\\n    at matrix_inverse (/omkarv/FK_Transforms/test_2.js:647:29)\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_2.js:679:19)\\n    at Object.buildFKTransf"
           },
           "Test 3": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_3.js:415\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_3.js:415:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_3.js:1173:42)\\n    at Obje"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_3.js:426\\n      if (Math.abs(pivot) < eps) {\\n                            ^\\n\\nReferenceError: eps is not defined\\n    at matrix_inverse (/omkarv/FK_Transforms/test_3.js:426:29)\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_3.js:458:19)\\n    at Object.buildFKTransf"
           },
           "Test 4": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_4.js:409\\n    var mtm_inv = matrix_inverse(mtm);\\n                  ^\\n\\nReferenceError: matrix_inverse is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_4.js:409:19)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_4.js:1167:42)\\n    at Obje"
+            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_4.js:420\\n      if (Math.abs(pivot) < eps) {\\n                            ^\\n\\nReferenceError: eps is not defined\\n    at matrix_inverse (/omkarv/FK_Transforms/test_4.js:420:29)\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_4.js:452:19)\\n    at Object.buildFKTransf"
           },
           "Test 5": {
             "Status": "Succeed",
