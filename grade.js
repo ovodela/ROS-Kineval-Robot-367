@@ -1,5 +1,5 @@
-//CI grader generates report at 22-02-2023-17-07-58
-//Commit hash: a7fb662
+//CI grader generates report at 22-02-2023-18-50-15
+//Commit hash: b569077
 grade = 
 {
   "omkarv": {
@@ -140,14 +140,14 @@ grade =
         }
       },
       "FK_MatrixRoutines": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "0 out of 1 test cases passed"
+          "1 out of 1 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'matrix_multiply test pass\\nmatrix_transpose test pass\\nvector_normalize test pass\\nvector_cross test fail\\ngenerate_identity test pass\\ngenerate_translation_matrix test pass\\ngenerate_rotation_matrix_X test pass\\ngenerate_rotation_matrix_Y test pass\\ngenerate_rotation_matrix_Z test pass\\n[ERROR]: Test fail\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
@@ -159,23 +159,23 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_0.js:498\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_0.js:498:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_0.js:1272:42)\\n    at Object.robotForwardKinem"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_0.js:484\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_0.js:484:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_0.js:1267:25)\\n"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_1.js:381\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_1.js:381:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_1.js:1155:42)\\n    at Object.robotForwardKinem"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_1.js:367\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_1.js:367:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_1.js:1150:25)\\n"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_2.js:633\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_2.js:633:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_2.js:1407:42)\\n    at Object.robotForwardKinem"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_2.js:619\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_2.js:619:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_2.js:1402:25)\\n"
           },
           "Test 3": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_3.js:412\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_3.js:412:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_3.js:1186:42)\\n    at Object.robotForwardKinem"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_3.js:398\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_3.js:398:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_3.js:1181:25)\\n"
           },
           "Test 4": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FK_Transforms/test_4.js:406\\n    let svd = numeric.svd(m);\\n              ^\\n\\nReferenceError: numeric is not defined\\n    at matrix_pseudoinverse (/omkarv/FK_Transforms/test_4.js:406:15)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_4.js:1180:42)\\n    at Object.robotForwardKinem"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_4.js:392\\n    let result = new Array(m[0].length);\\n                            ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at matrix_transpose (/omkarv/FK_Transforms/test_4.js:392:29)\\n    at Object.buildFKTransforms (/omkarv/FK_Transforms/test_4.js:1175:25)\\n"
           },
           "Test 5": {
             "Status": "Succeed",
