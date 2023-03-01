@@ -91,7 +91,7 @@ kineval.buildFKTransforms = function buildFKTransforms() {
 }
 
 function traverseFKBase(joint, parent_matrix, parent_position, cumulative_rotation) {
-    var child_link = joint.child;
+    var child_link = robot.links[joint];
 
     // apply joint rotation matrix
     var joint_rotation_matrix = generate_rotation_matrix_Z(joint.angle);
@@ -145,13 +145,13 @@ function traverseFKJoint(joint, parent_matrix, parent_position, cumulative_rotat
     }
   
     // save the link matrix for future use in kineval.updateLinkTransforms()
-    kineval.link_transforms[joint.child] = link_matrix;
+    kineval.link_transforms[robot.links[joint]] = link_matrix;
   
     // update cumulative rotation matrix for child links
     var next_rotation = matrix_multiply(cumulative_rotation, rotation_matrix);
   
     // traverse the child link
-    traverseFKLink(robot.links[joint.child], link_matrix, parent_position, next_rotation);
+    traverseFKLink(robot.links[robot.links[joint]], link_matrix, parent_position, next_rotation);
 
 }
   
