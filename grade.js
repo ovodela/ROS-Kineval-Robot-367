@@ -1,5 +1,5 @@
-//CI grader generates report at 04-03-2023-00-37-01
-//Commit hash: 6c3d7ae
+//CI grader generates report at 04-03-2023-23-05-24
+//Commit hash: 2009867
 grade = 
 {
   "omkarv": {
@@ -159,23 +159,23 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_0.js:1315\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(joint.angle);\\n                                                                 ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_0.js:1315:66)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-gr"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_0.js:1315\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(robot.joints[joint].angle);\\n                                                                               ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_0.js:1315:80)\\n    at Object.buildFKTransforms (/home/"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_1.js:1198\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(joint.angle);\\n                                                                 ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_1.js:1198:66)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-gr"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_1.js:1198\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(robot.joints[joint].angle);\\n                                                                               ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_1.js:1198:80)\\n    at Object.buildFKTransforms (/home/"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_2.js:1450\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(joint.angle);\\n                                                                 ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_2.js:1450:66)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-gr"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_2.js:1450\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(robot.joints[joint].angle);\\n                                                                               ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_2.js:1450:80)\\n    at Object.buildFKTransforms (/home/"
           },
           "Test 3": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_3.js:1229\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(joint.angle);\\n                                                                 ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_3.js:1229:66)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-gr"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_3.js:1229\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(robot.joints[joint].angle);\\n                                                                               ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_3.js:1229:80)\\n    at Object.buildFKTransforms (/home/"
           },
           "Test 4": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_4.js:1223\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(joint.angle);\\n                                                                 ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_4.js:1223:66)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-gr"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_4.js:1223\\n    var joint_rotation_matrix = generate_rotation_matrix_Z(robot.joints[joint].angle);\\n                                                                               ^\\n\\nTypeError: Cannot read property 'angle' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_4.js:1223:80)\\n    at Object.buildFKTransforms (/home/"
           },
           "Test 5": {
             "Status": "Succeed",
