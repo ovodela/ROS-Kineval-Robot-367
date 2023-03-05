@@ -94,7 +94,7 @@ function traverseFKBase(joint, parent_matrix, parent_position, cumulative_rotati
     var child_link = robot.links[joint];
 
     // apply joint rotation matrix
-    var joint_rotation_matrix = generate_rotation_matrix_Z(robot.joints[joint].angle);
+    var joint_rotation_matrix = generate_rotation_matrix_Z(robot.joints[robot.base].angle);
     var cumulative_rotation = matrix_multiply(cumulative_rotation, joint_rotation_matrix);
 
     // apply link translation matrix
