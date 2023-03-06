@@ -1,5 +1,5 @@
-//CI grader generates report at 06-03-2023-11-50-14
-//Commit hash: d51ae60
+//CI grader generates report at 06-03-2023-13-30-43
+//Commit hash: 924871d
 grade = 
 {
   "omkarv": {
@@ -152,30 +152,30 @@ grade =
         }
       },
       "FK_Transforms": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "3 out of 8 test cases passed"
+          "8 out of 8 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_0.js:1299\\n    for (var  i = 0; i < robot.links[robot.base].children.length; i++){\\n                                                          ^\\n\\nTypeError: Cannot read property 'length' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_0.js:1299:59)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-grader/ci"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 1": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_1.js:1182\\n    for (var  i = 0; i < robot.links[robot.base].children.length; i++){\\n                                                          ^\\n\\nTypeError: Cannot read property 'length' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_1.js:1182:59)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-grader/ci"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 2": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_2.js:1434\\n    for (var  i = 0; i < robot.links[robot.base].children.length; i++){\\n                                                          ^\\n\\nTypeError: Cannot read property 'length' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_2.js:1434:59)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-grader/ci"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 3": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_3.js:1213\\n    for (var  i = 0; i < robot.links[robot.base].children.length; i++){\\n                                                          ^\\n\\nTypeError: Cannot read property 'length' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_3.js:1213:59)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-grader/ci"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 4": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FK_Transforms/test_4.js:1207\\n    for (var  i = 0; i < robot.links[robot.base].children.length; i++){\\n                                                          ^\\n\\nTypeError: Cannot read property 'length' of undefined\\n    at traverseFKBase (/omkarv/FK_Transforms/test_4.js:1207:59)\\n    at Object.buildFKTransforms (/home/logan/Desktop/teaching/CI-grader/ci"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 5": {
             "Status": "Succeed",
