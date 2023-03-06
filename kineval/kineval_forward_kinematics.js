@@ -47,111 +47,124 @@ kineval.robotForwardKinematics = function robotForwardKinematics () {
     //   coordinate conversion is needed for kineval/threejs coordinates:
     //
 
-    //
-    
-    function updateRobotHeadingAndLateral() { //Need change to recieve input
-        // Set robot_heading to unit vector pointing in z-axis direction
-        robot_heading = [
-        [0],
-        [0],
-        [1],
-        [0]
-        ];
-    
-        // Set robot_lateral to unit vector pointing in x-axis direction
-        robot_lateral = [
-        [1],
-        [0],
-        [0],
-        [0]
-        ];
-    }  
-  
-  
-  
-  
+    // 
+
 
 kineval.buildFKTransforms = function buildFKTransforms() {
-    // generate identity matrix
-    var identity = generate_identity();
+    // recursive traversal over links and joints starting from base
+    traverseFKBase();
 
-    // initialize robot base matrix and position
-    var robot_base_matrix = generate_identity();
-    var robot_base_position = [[0], [0], [0], [1]];
+}
+
+function generate_rotation_matrix(r,p,y){
+    let result = matrix_multiply(matrix_multiply(generate_rotation_matrix_Z(y), generate_rotation_matrix_Y(p)), generate_rotation_matrix_X(r)) ;
+    return result;
+}
+
+function traverseFKBase() {
+
+    let trans_mat = generate_translation_matrix(robot.origin.xyz[0], robot.origin.xyz[1], robot.origin.xyz[2]);
+    let rot_mat = generate_rotation_matrix(robot.origin.rpy[0],robot.origin.rpy[1],robot.origin.rpy[2]);
+    robot.links[robot.base].xform = matrix_multiply(trans_mat,rot_mat);
 
     // if using keyboard interface, transform robot heading and lateral into world coordinates
-    if (typeof robot_heading !== 'undefined' && typeof robot_lateral !== 'undefined') {
-        robot_heading = matrix_transpose(matrix_pseudoinverse(robot_base_matrix))[0];
-        robot_lateral = matrix_transpose(matrix_pseudoinverse(robot_base_matrix))[1];
+    let headVec = [[0],[0],[1],[1]];
+    let latVec = [[1],[0],[0],[1]];
+    robot_heading = matrix_multiply(robot.links[robot.base].xform,headVec);
+    robot_lateral = matrix_multiply(robot.links[robot.base].xform,latVec);
+
+    if (robot.links_geom_imported === false) {
+        let temp = 100;
+    } else{
+        robot.links[robot.base].xform = matrix_multiply(robot.links[robot.base].xform, matrix_multiply(generate_rotation_matrix_Y(-Math.PI/2),generate_rotation_matrix_X(-Math.PI/2)));
     }
 
-    // recursive traversal over links and joints starting from base
-    traverseFKBase(robot.joints[robot.base], robot_base_matrix, robot_base_position, identity);
+    for (var  i = 0; i < robot.links[robot.base].children.length; i++){
+        traverseFKJoint(robot.links[robot.base].child_joints[i]);
+    }
+
+}
+
+
+function traverseFKLink(link) {
+    robot.links[link].xform = robot.joints[robot.links[link].parent].xform;
+
+    if (typeof robot.links[link].child_joints === 'undefined'){
+        return;
+    }
+        
+    for (var i = 0; i < robot.links[link].child_joints.length; i++){
+        traverseFKJoint(robot.links[link].child_joints[i]);
+    }
+
+}
+
+function vector_dot(v1,v2){
+    let v = new Array(v1.length);
+    for (i = 0; i < v1.length; ++i){
+        v[i] = v1[i] * v2[i];
+    }
+    return v;
+}
+
+function rotation_matrix_from_angle_axis(mat, angle, axis){
+    //create quaternion
+    let quat = [Math.cos(angle / 2), axis[0] * Math.sin(angle / 2), axis[1] * Math.sin(angle / 2), axis[2] * Math.sin(angle / 2)];
     
-}
-
-function traverseFKBase(joint, parent_matrix, parent_position, cumulative_rotation) {
-    var child_link = robot.links[joint];
-
-    // apply joint rotation matrix
-    var joint_rotation_matrix = generate_rotation_matrix_Z(robot.joints[robot.base].angle);
-    var cumulative_rotation = matrix_multiply(cumulative_rotation, joint_rotation_matrix);
-
-    // apply link translation matrix
-    var link_translation_matrix = generate_translation_matrix(child_link.origin.xyz[0], child_link.origin.xyz[1], child_link.origin.xyz[2]);
-    var link_position = matrix_multiply(parent_matrix, matrix_multiply(cumulative_rotation, link_translation_matrix));
-    var link_matrix = matrix_multiply(cumulative_rotation, link_translation_matrix);
-
-    // set joint FK transform
-    joint.transform = link_matrix;
-
-    traverseFKLink(child_link, link_matrix, link_position, cumulative_rotation);
-
-}
-
-function traverseFKLink(link, parent_matrix, parent_position, cumulative_rotation) {
-    var child_joint = robot.joints[link].children[0];
-
-    // apply link transform matrix
-    var link_matrix = generate_translation_matrix(robot.links[link].com.xyz[0], robot.links[link].com.xyz[1], robot.links[link].com.xyz[2]);
-    var link_position = matrix_multiply(parent_matrix, matrix_multiply(cumulative_rotation, link_matrix));
-    var link_rotation_matrix = generate_rotation_matrix_X(robot.links[link].inertial.R[0][0]);
-    link_rotation_matrix = matrix_multiply(generate_rotation_matrix_Y(robot.links[link].inertial.R[1][1]), link_rotation_matrix);
-    link_rotation_matrix = matrix_multiply(generate_rotation_matrix_Z(robot.links[link].inertial.R[2][2]), link_rotation_matrix);
-    var link_matrix = matrix_multiply(link_position, matrix_multiply(link_rotation_matrix, generate_translation_matrix(-robot.links[link].com.xyz[0], -robot.links[link].com.xyz[1], -robot.links[link].com.xyz[2])));
-
-    // set link FK transform
-    robot.links[link].transform = link_matrix;
-
-    traverseFKJoint(child_joint, link_matrix, link_position, cumulative_rotation);
-
-}
-
-function traverseFKJoint(joint, parent_matrix, parent_position, cumulative_rotation) {
-    // get rotation matrix from joint angle
-    var rotation_matrix = generate_rotation_matrix_Z(robot.joints[joint].angle);
-  
-    // apply joint rotation
-    var joint_matrix = matrix_multiply(parent_matrix, rotation_matrix);
-  
-    // apply translation to get child link to correct position relative to parent joint
-    var translation_matrix = generate_translation_matrix(robot.joints[joint].origin.xyz[0], robot.joints[joint].origin.xyz[1], robot.joints[joint].origin.xyz[2]);
-    var link_matrix = matrix_multiply(joint_matrix, translation_matrix);
-  
-    // update link matrix with any additional transform
-    if (joint.transform) {
-      var transform_matrix = matrix_multiply(joint_matrix, robot.joints[joint].transform);
-      link_matrix = matrix_multiply(transform_matrix, translation_matrix);
+    //normalize
+    var sum = 0;
+    var norm = [];
+    for (i = 0; i < quat.length; i++){
+        sum = sum + quat[i] * quat[i];
     }
-  
-    // save the link matrix for future use in kineval.updateLinkTransforms()
-    kineval.link_transforms[robot.links[joint]] = link_matrix;
-  
-    // update cumulative rotation matrix for child links
-    var next_rotation = matrix_multiply(cumulative_rotation, rotation_matrix);
-  
-    // traverse the child link
-    traverseFKLink(robot.links[robot.links[joint]], link_matrix, parent_position, next_rotation);
+    let mag = Math.sqrt(sum);
+    for (i = 0; i < quat.length; i++){
+        if (Math.abs(mag) < Number.EPSILON){
+            norm[i] = quat[i];
+        } else {
+            nrom[i] = quat[i] / mag;
+        }
+    }
+
+    //create rotation matrix
+    mat[0][0] = norm[0] * norm[0] + norm[1] * norm[1] - norm[2] * norm[2] - norm[3] * norm[3];
+    mat[0][1] = 2 * (norm[1] * norm[2] - norm[0] * norm[3]);
+    mat[0][2] = 2 * (norm[0] * norm[2] + norm[1] * norm[3]);
+    mat[1][0] = 2 * (norm[1] * norm[2] + norm[0] * norm[3]);
+    mat[1][1] = norm[0] * norm[0] - norm[1] * norm[1] + norm[2] * norm[2] - norm[3] * norm[3];
+    mat[1][2] = 2 * (norm[3] * norm[2] - norm[0] * norm[1]);
+    mat[2][0] = 2 * (norm[1] * norm[3] - norm[0] * norm[2]);
+    mat[2][1] = 2 * (norm[1] * norm[0] + norm[2] * norm[3]);
+    mat[2][2] = norm[0] * norm[0] - norm[1] * norm[1] - norm[2] * norm[2] + norm[3] * norm[3];
+
+    return mat;
+
+}
+
+function traverseFKJoint(joint) {
+    let trans_mat = generate_translation_matrix(robot.joints[joint].origin.xyz[0], robot.joints[joint].origin.xyz[1], robot.joints[joint].origin.xyz[2]);
+    let rot_mat = generate_rotation_matrix(robot.joints[joint].origin.rpy[0],robot.joints[joint].origin.rpy[1],robot.joints[joint].origin.rpy[2]);
+    let tot_mat = matrix_multiply(trans_mat,rot_mat);
+    tot_mat = matrix_multiply(robot.links[robot.joints[joint].parent].xform, tot_mat);
+
+
+    var new_mat = generate_identity(4);
+    if (robot.links_geom_imported){
+        if (robot.joints[joint].type === "prismatic"){
+            var temp = [robot.joints[joint].angle, robot.joints[joint].angle, robot.joints[joint].angle];
+            temp = vector_dot(temp, robot.joints[joint].axis);
+            new_mat = generate_translation_matrix(temp[0],temp[1], temp[2]);
+        }else if ((robot.joints[joint].type === "revolute")|(robot.joints[joint].type === "continuous")){
+            new_mat = rotation_matrix_from_angle_axis(new_mat, robot.joints[joint].angle, robot.joints[joint].axis);
+        }else{
+        }
+    }
+    else{
+        new_mat = rotation_matrix_from_angle_axis(new_mat, robot.joints[joint].angle, robot.joints[joint].axis);
+    }
+
+    robot.joints[joint].xform = matrix_multiply(tot_mat, new_mat);
+    traverseFKLink(robot.joints[joint].child);
 
 }
   
