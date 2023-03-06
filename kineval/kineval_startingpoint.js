@@ -367,16 +367,21 @@ kineval.startingPlaceholderUserInput = function startingPlaceholderUserInput() {
     /* keyboard is a threejs helper object for reading keyboard state.  
          keyboard.pressed() will return true if a particular key is being
          pressed, without the need for a callback event handler 
+        spacingGlobal // variables declared with "var" are global
+        waveAmplitude  // what does this do?
+        waveFrequency  // could be interesting to modify this variable
+        offsetVertical   // this could be useful later
+        jitterRadius 
     */
     if (keyboard.pressed("shift+x")) {
         textbar.innerHTML = "come on down";  // make the objects move down
         // STENCIL: update the vertical offset variable
-        verticalOffset -= 0.1;
+        offsetVertical -= 0.1;
     }
     else if (keyboard.pressed("x")) {
         textbar.innerHTML = "moving on up";  // make the objects move up
         // STENCIL: update the vertical offset variable
-        verticalOffset += 0.1;
+        offsetVertical += 0.1;
     }
     else if (keyboard.pressed("shift+z")) {
         // increase the jittering of the objects
@@ -394,13 +399,13 @@ kineval.startingPlaceholderUserInput = function startingPlaceholderUserInput() {
         // increase spacing along the x-axis between the objects
         textbar.innerHTML = "sail away"; 
         // STENCIL: update the global spacing variable
-        xSpacing += 0.1;
+        spacingGlobal += 0.1;
     }
     else if (keyboard.pressed("1")) {
         // decrease spacing along the x-axis between the objects
         textbar.innerHTML = "come together"; 
         // STENCIL: update the global spacing variable
-        xSpacing -= 0.1;
+        spacingGlobal -= 0.1;
     }
     else if (keyboard.pressed("shift+2")) { 
         // increase the amplitude of the animating sine wave
