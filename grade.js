@@ -1,5 +1,5 @@
-//CI grader generates report at 12-03-2023-10-25-23
-//Commit hash: a78f1ec
+//CI grader generates report at 12-03-2023-12-04-30
+//Commit hash: e05f2e7
 grade = 
 {
   "omkarv": {
@@ -217,14 +217,14 @@ grade =
       },
       "FSMDance_BaseControl": "FSMDance_BaseControl",
       "FSMDance_SetpointControl": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "0 out of 1 test cases passed"
+          "1 out of 1 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Setpoint control test failed\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
