@@ -22,17 +22,23 @@ kineval.setpointDanceSequence = function execute_setpoints() {
     if (!kineval.params.update_pd_dance) return; 
 
     // STENCIL: implement FSM to cycle through dance pose setpoints
-    if (!kineval.params.current_setpoint_index) {
-        kineval.params.current_setpoint_index = 0;
-    }
+    kineval.params.dance_pose_index = 0;
+    var state = "s";
     
-    if (kineval.params.current_setpoint_index === kineval.params.setpoints.length) {
-        kineval.params.current_setpoint_index = 0;
-    }
-    
-    var current_setpoint = kineval.params.setpoints[kineval.params.current_setpoint_index];
-    for (var joint_name in current_setpoint) {
-        kineval.robot.joints[joint_name].control = current_setpoint[joint_name];
+    while(kineval.params.dance_pose_index < kineval.params.dance_sequence_index.length){
+        switch(state){
+            case "s":
+                for (x in kineval.robot.joints){
+                    kineval.params.setpoint_target[x] = kineval.setpoints[kineval.params.dance_pose_index][x];
+                }
+                state = "r";
+                break;
+            case "r":
+                kineval.params.dance_pose_index++;
+                kineval.robotArmControllerSetpoint();
+                state = "s";
+                break;
+        }
     }
     
     kineval.params.current_setpoint_index++;
@@ -59,10 +65,11 @@ kineval.robotArmControllerSetpoint = function robot_pd_control () {
 
     // STENCIL: implement P servo controller over joints
     for (var joint_name in kineval.robot.joints) {
-        var joint = kineval.robot.joints[joint_name];
-        var error = joint.control - joint.angle;
-        var command = kineval.params.Kp * error;
-        joint.motor = command;
+        var error = kineval.params.setpoint_target[joint_name] - kineval.robot.joints[joint_name].angle;
+        
+        robot.joints[joint_name].servo.p_gain = .1;
+        var command = robot.joints[joint_name].servo.p_gain * error;
+        kineval.robot.joints[joint_name].angle = kineval.robot.joints[joint_name].angle + command;
     }
 }
 
