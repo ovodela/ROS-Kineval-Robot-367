@@ -1,5 +1,5 @@
-//CI grader generates report at 13-03-2023-15-49-32
-//Commit hash: 10b2250
+//CI grader generates report at 13-03-2023-17-38-26
+//Commit hash: c6ea8ae
 grade = 
 {
   "omkarv": {
@@ -224,7 +224,7 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FSMDance_SetpointControl/test_0.js:378\\n    for (var joint_name in kineval.robot.joints) {\\n                                         ^\\n\\nTypeError: Cannot read property 'joints' of undefined\\n    at Object.robot_pd_control [as robotArmControllerSetpoint] (/omkarv/FSMDance_SetpointControl/test_0.js:378:42)\\n    at test (/home/logan/Desktop/teaching/CI-grader"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FSMDance_SetpointControl/test_0.js:378\\n    for (joint_name in kineval.robot.joints) {\\n                                     ^\\n\\nTypeError: Cannot read property 'joints' of undefined\\n    at Object.robot_pd_control [as robotArmControllerSetpoint] (/omkarv/FSMDance_SetpointControl/test_0.js:378:38)\\n    at test (/home/logan/Desktop/teaching/CI-grader/ci_test"
           }
         }
       },
