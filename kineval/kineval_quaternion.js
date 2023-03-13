@@ -61,7 +61,11 @@ kineval.quaternionMultiply = function quaternion_multiply(q1,q2) {
 
 kineval.quaternionToRotationMatrix = function quaternion_to_rotation_matrix (q) {
     // returns 4-by-4 2D rotation matrix
-    var m = generate_identity();
+    let m = new Array(4);
+    
+    for (let i = 0; i < 4; i++) {
+      m[i] = new Array(4);
+    }
 
     m[0][0] = q.a * q.a + q.b * q.b - q.c * q.c - q.d * q.d;
     m[0][1] = 2 * (q.b * q.c - q.a * q.d);
