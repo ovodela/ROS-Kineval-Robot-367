@@ -100,7 +100,13 @@ kineval.traverseFKLink = function traverseFKLink(ms, link) {
 kineval.traverseFKJoint = function traverseFKJoint(ms, joint) {
     // add same position matrix to the end of the stack and update the matrix
     ms.push(ms[ms.length - 1]);
-    ms[ms.length - 1] = matrix_multiply(ms[ms.length - 1], translation_of_matrix(robot.joints[joint].origin.xyz,robot.joints[joint].origin.rpy));
+    var transMat = translation_of_matrix(robot.joints[joint].origin.xyz,robot.joints[joint].origin.rpy);
+    
+    var quat = kineval.quaternionFromAxisAngle(robot.joints[joint].axis, robot.joints[joint].angle);
+    var rotMat = kineval.quaternionToRotationMatrix(quat);
+    var multMat = matrix_multiply(transMat, rotMat);
+
+    ms[ms.length - 1] = matrix_multiply(ms[ms.length - 1], multMat);
     robot.joints[joint].xform = ms[ms.length - 1];
 
     // recursive call on link if there is a child
