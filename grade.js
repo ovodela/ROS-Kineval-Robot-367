@@ -1,5 +1,5 @@
-//CI grader generates report at 12-03-2023-23-40-23
-//Commit hash: adc1729
+//CI grader generates report at 13-03-2023-01-18-08
+//Commit hash: 63314ad
 grade = 
 {
   "omkarv": {
@@ -205,7 +205,7 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/FSMDance_Quaternion/test_0.js:134\\n    var m = generate_identity();\\n            ^\\n\\nReferenceError: generate_identity is not defined\\n    at Object.quaternion_to_rotation_matrix [as quaternionToRotationMatrix] (/omkarv/FSMDance_Quaternion/test_0.js:134:13)\\n    at test_main (/omkarv/FSMDance_"
+            "Stderr": "b'quaternionFromAxisAngle test pass\\nquaternionNormalize test pass\\nquaternionMultiply test fail\\nquaternionToRotationMatrix test pass\\n[ERROR]: Test fail\\n'"
           }
         }
       },
