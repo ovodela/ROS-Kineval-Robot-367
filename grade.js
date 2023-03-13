@@ -1,5 +1,5 @@
-//CI grader generates report at 13-03-2023-01-18-08
-//Commit hash: 63314ad
+//CI grader generates report at 13-03-2023-02-56-54
+//Commit hash: 9c6e4fe
 grade = 
 {
   "omkarv": {
@@ -198,14 +198,14 @@ grade =
         ]
       },
       "FSMDance_Quaternion": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "0 out of 1 test cases passed"
+          "1 out of 1 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'quaternionFromAxisAngle test pass\\nquaternionNormalize test pass\\nquaternionMultiply test fail\\nquaternionToRotationMatrix test pass\\n[ERROR]: Test fail\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
@@ -224,7 +224,7 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Setpoint control test failed\\n'"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FSMDance_SetpointControl/test_0.js:372\\n    for (var joint_name in kineval.robot.joints) {\\n                                         ^\\n\\nTypeError: Cannot read property 'joints' of undefined\\n    at Object.robot_pd_control [as robotArmControllerSetpoint] (/omkarv/FSMDance_SetpointControl/test_0.js:372:42)\\n    at test (/home/logan/Desktop/teaching/CI-grader"
           }
         }
       },
