@@ -47,11 +47,29 @@ kineval.robotForwardKinematics = function robotForwardKinematics () {
     //   coordinate conversion is needed for kineval/threejs coordinates:
     //
 
-    // 
+     
 
+    // function updateRobotHeadingAndLateral() { //Need change to recieve input
+    //     // Set robot_heading to unit vector pointing in z-axis direction
+    //     robot_heading = [
+    //     [0],
+    //     [0],
+    //     [1],
+    //     [0]
+    //     ];
+    
+    //     // Set robot_lateral to unit vector pointing in x-axis direction
+    //     robot_lateral = [
+    //     [1],
+    //     [0],
+    //     [0],
+    //     [0]
+    //     ];
+    // }  
 
 kineval.buildFKTransforms = function buildFKTransforms() {
     // recursive traversal over links and joints starting from base
+    var ms;
     kineval.traverseFKBase();
 
 }
@@ -65,13 +83,16 @@ function translation_of_matrix(xyz, rpy){
     return result;
 }
 
-kineval.traverseFKBase = function traverseFKBase() {
+kineval.traverseFKBase = function traverseFKBase(ms) {
     //creating the matrix stack with two empty matrix
-    var ms = [generate_identity(), generate_identity()];
+    ms = [generate_identity(), generate_identity()];
 
     //updating the stack for the base value
     ms[1] = matrix_multiply(ms[1], translation_of_matrix(robot.origin.xyz, robot.origin.rpy));
     robot.origin.xform = ms[1];
+
+    robot_heading = matrix_multiply(robot.origin.xform, [[0], [0], [1], [1]]);
+    robot_lateral = matrix_multiply(robot.origin.xform, [[1], [0], [0], [1]]);
 
     //start traversal at link
     kineval.traverseFKLink(ms, robot.base);
@@ -101,8 +122,9 @@ kineval.traverseFKJoint = function traverseFKJoint(ms, joint) {
     // add same position matrix to the end of the stack and update the matrix
     ms.push(ms[ms.length - 1]);
     var transMat = translation_of_matrix(robot.joints[joint].origin.xyz,robot.joints[joint].origin.rpy);
-    
+
     var quat = kineval.quaternionFromAxisAngle(robot.joints[joint].axis, robot.joints[joint].angle);
+    // quat = kineval.quaternionNormalize(quat);
     var rotMat = kineval.quaternionToRotationMatrix(quat);
     var multMat = matrix_multiply(transMat, rotMat);
 
