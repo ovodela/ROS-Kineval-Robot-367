@@ -1,5 +1,5 @@
-//CI grader generates report at 16-03-2023-10-53-13
-//Commit hash: 06ac11b
+//CI grader generates report at 16-03-2023-12-54-08
+//Commit hash: 062ae57
 grade = 
 {
   "omkarv": {
@@ -237,20 +237,58 @@ grade =
       "IK_Jacobian": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "0 out of 2 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "b'robot.jacobian not defined, please check whether you have assigned value for robot.jacobian\\n'"
+          },
+          "Test 1": {
+            "Status": "Failed",
+            "Stderr": "b'robot.jacobian not defined, please check whether you have assigned value for robot.jacobian\\n'"
+          }
+        }
       },
       "IK_JTranspose": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "1 out of 3 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "b'robot.dq not defined, please check whether you have assigned value for robot.dq\\n'"
+          },
+          "Test 1": {
+            "Status": "Failed",
+            "Stderr": "b'robot.dq not defined, please check whether you have assigned value for robot.dq\\n'"
+          },
+          "Test 2": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          }
+        }
       },
       "IK_JPseudoInverse": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "1 out of 3 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "b'robot.dq not defined, please check whether you have assigned value for robot.dq\\n'"
+          },
+          "Test 1": {
+            "Status": "Failed",
+            "Stderr": "b'robot.dq not defined, please check whether you have assigned value for robot.dq\\n'"
+          },
+          "Test 2": {
+            "Status": "Succeed",
+            "Stderr": "b''"
+          }
+        }
       },
       "MotionPlan_Collision": {
         "status": "PENDING",
