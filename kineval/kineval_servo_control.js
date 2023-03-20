@@ -81,8 +81,8 @@ kineval.robotArmControllerSetpoint = function robot_pd_control () {
     kineval.params.update_pd = false; // if update requested, clear request and process setpoint control
 
     // STENCIL: implement P servo controller over joints
-    for (joint_name in kineval.robot.joints) {
-        var error = kineval.params.setpoint_target[joint_name] - kineval.robot.joints[joint_name].angle;
+    for (joint_name in robot.joints) {
+        var error = kineval.params.setpoint_target[joint_name] - robot.joints[joint_name].angle;
         
         robot.joints[joint_name].servo.p_gain = .1;
         robot.joints[joint_name].control = robot.joints[joint_name].servo.p_gain * error;
@@ -90,13 +90,13 @@ kineval.robotArmControllerSetpoint = function robot_pd_control () {
         // var command = robot.joints[joint_name].servo.p_gain * error;
         // kineval.robot.joints[joint_name].angle = kineval.robot.joints[joint_name].angle + command;
     }
-    for (jointI in robot.joints) {
-        var err = kineval.params.setpoint_target[jointI] - robot.joints[jointI].angle;  
-        robot.joints[jointI].servo.p_gain = 0.1;
-        robot.joints[jointI].control = robot.joints[jointI].servo.p_gain*err;
-        //robot.joints[jointI].control = newA;
-        //kineval.robot.joints[jointI].angle = kineval.robot.joints[jointI].angle+newA;
-    }
+//     for (jointI in robot.joints) {
+//         var err = kineval.params.setpoint_target[jointI] - robot.joints[jointI].angle;  
+//         robot.joints[jointI].servo.p_gain = 0.1;
+//         robot.joints[jointI].control = robot.joints[jointI].servo.p_gain*err;
+//         //robot.joints[jointI].control = newA;
+//         //kineval.robot.joints[jointI].angle = kineval.robot.joints[jointI].angle+newA;
+//     }
 }
 
 
