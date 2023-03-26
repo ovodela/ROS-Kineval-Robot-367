@@ -27,7 +27,7 @@ kineval.quaternionNormalize = function quaternion_normalize(q1) {
     var q = {};
     var mag = q1.a * q1.a + q1.b * q1.b + q1.c * q1.c + q1.d * q1.d;
 
-    mag = Math.sqrt(mag);
+    mag = Math.sqrt(Math.abs(mag));
 
     if (!(Math.abs(mag) < Number.EPSILON)){
         q.a = q1.a / mag;
@@ -76,6 +76,7 @@ kineval.quaternionToRotationMatrix = function quaternion_to_rotation_matrix (q) 
     m[2][0] = 2 * (q.b * q.d - q.a * q.c);
     m[2][1] = 2 * (q.b * q.a + q.c * q.d);
     m[2][2] = q.a * q.a - q.b * q.b - q.c * q.c + q.d * q.d;
+    m[3][3] = 1;
 
     return m;
 

@@ -22,43 +22,25 @@ kineval.setpointDanceSequence = function execute_setpoints() {
     if (!kineval.params.update_pd_dance) return; 
 
     // STENCIL: implement FSM to cycle through dance pose setpoints
-    kineval.params.dance_pose_index = 0;
-    // var state = "s";
+    //kineval.params.dance_pose_index = 0;
     
-    // while(kineval.params.dance_pose_index < kineval.params.dance_sequence_index.length){
-    //     switch(state){
-    //         case "s":
-    //             for (x in kineval.robot.joints){
-    //                 kineval.params.setpoint_target[x] = kineval.setpoints[kineval.params.dance_pose_index][x];
-    //             }
-    //             state = "r";
-    //             break;
-    //         case "r":
-    //             kineval.params.dance_pose_index++;
-    //             kineval.robotArmControllerSetpoint();
-    //             state = "s";
-    //             break;
-    //     }
-    // }
-    
-    // kineval.params.current_setpoint_index++;
 
-    var err = 0;
-
-    while(kineval.params.dance_pose_index < kineval.params.dance_sequence_index.length){
-        for (x in robot.joints) {
-            kineval.params.setpoint_target[x] = kineval.setpoints[kineval.params.dance_pose_index][x];
-        }
-
-        for (x in robot.joints) {
-            err = err + kineval.params.setpoint_target[x] - robot.joints[x].angle;
-        }
-
-        if(err < 10){
-            kineval.params.dance_pose_index++;
-            err = 0;
-        }        
+    var counter = 0;
+    var s = 0;
+    kineval.params.dance_pose_index = kineval.params.dance_pose_index%kineval.params.dance_sequence_index.length;
+    for (x in robot.joints) {
+        kineval.params.setpoint_target[x] = kineval.setpoints[kineval.params.dance_sequence_index[kineval.params.dance_pose_index]][x];
+        var error = kineval.params.setpoint_target[x] - robot.joints[x].angle;
+        
+        if(error < 0.01) 
+            counter += 1;
+        s += 1;
     }
+    if(counter === s){
+        kineval.params.dance_pose_index += 1;
+        kineval.params.dance_pose_index = kineval.params.dance_pose_index % kineval.params.dance_sequence_index.length;
+    }        
+    
 }
 
 kineval.setpointClockMovement = function execute_clock() {
@@ -84,19 +66,12 @@ kineval.robotArmControllerSetpoint = function robot_pd_control () {
     for (joint_name in robot.joints) {
         var error = kineval.params.setpoint_target[joint_name] - robot.joints[joint_name].angle;
         
-        robot.joints[joint_name].servo.p_gain = .1;
+        robot.joints[joint_name].servo.p_gain = .15;
         robot.joints[joint_name].control = robot.joints[joint_name].servo.p_gain * error;
 
         // var command = robot.joints[joint_name].servo.p_gain * error;
         // kineval.robot.joints[joint_name].angle = kineval.robot.joints[joint_name].angle + command;
     }
-//     for (jointI in robot.joints) {
-//         var err = kineval.params.setpoint_target[jointI] - robot.joints[jointI].angle;  
-//         robot.joints[jointI].servo.p_gain = 0.1;
-//         robot.joints[jointI].control = robot.joints[jointI].servo.p_gain*err;
-//         //robot.joints[jointI].control = newA;
-//         //kineval.robot.joints[jointI].angle = kineval.robot.joints[jointI].angle+newA;
-//     }
 }
 
 

@@ -69,8 +69,8 @@ kineval.robotForwardKinematics = function robotForwardKinematics () {
 
 kineval.buildFKTransforms = function buildFKTransforms() {
     // recursive traversal over links and joints starting from base
-    var ms;
-    kineval.traverseFKBase();
+    var ms = [generate_identity(), generate_identity()];
+    kineval.traverseFKBase(ms);
 
 }
 
@@ -85,7 +85,7 @@ function translation_of_matrix(xyz, rpy){
 
 kineval.traverseFKBase = function traverseFKBase(ms) {
     //creating the matrix stack with two empty matrix
-    ms = [generate_identity(), generate_identity()];
+    // ms = [generate_identity(), generate_identity()];
 
     //updating the stack for the base value
     ms[1] = matrix_multiply(ms[1], translation_of_matrix(robot.origin.xyz, robot.origin.rpy));
