@@ -1,5 +1,5 @@
-//CI grader generates report at 30-03-2023-08-12-03
-//Commit hash: 7c89d18
+//CI grader generates report at 30-03-2023-14-47-47
+//Commit hash: 6a0a3fe
 grade = 
 {
   "omkarv": {
@@ -16,8 +16,10 @@ grade =
         ]
       },
       "ROS Pub/Sub": {
-        "status": "CHECK",
-        "comments": "Passing 3 out of 3 tests"
+        "status": "PENDING",
+        "comments": [
+          "Passing 0 of 3 tests"
+        ]
       },
       "PathPlan_Heap": {
         "status": "PASS",
@@ -219,14 +221,8 @@ grade =
       "FSMDance_SetpointControl": {
         "status": "PENDING",
         "comments": [
-          "0 out of 1 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Setpoint control test failed\\n'"
-          }
-        }
+          ""
+        ]
       },
       "FSMDance_FSM": {
         "status": "PENDING",
@@ -293,14 +289,46 @@ grade =
       "MotionPlan_Collision": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "0 out of 3 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Collision test 0 failed\\n'"
+          },
+          "Test 1": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Collision test 1 failed\\n'"
+          },
+          "Test 2": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Collision test 2 failed\\n'"
+          }
+        }
       },
       "MotionPlan_2DRRTConnect": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "0 out of 4 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Search time out\\n'"
+          },
+          "Test 1": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Search time out\\n'"
+          },
+          "Test 2": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Search time out\\n'"
+          },
+          "Test 3": {
+            "Status": "Failed",
+            "Stderr": "b'[ERROR]: Search time out\\n'"
+          }
+        }
       },
       "MotionPlan_CSpaceRRTConnect": {
         "status": "PENDING",
@@ -323,19 +351,19 @@ grade =
     },
     "quizzes": [
       {
-        "status": "Takehome: 1.0 Interactive: 1.0"
+        "status": "PENDING"
       },
       {
-        "status": "Takehome: 0.75 Interactive: 1.0"
+        "status": "PENDING"
       },
       {
-        "status": "Takehome: 0.9 Interactive: 1.0"
+        "status": "PENDING"
       },
       {
-        "status": "Takehome (Doubled): 1.3  (No Interactive)"
+        "status": "PENDING"
       },
       {
-        "status": "Takehome: 0.75 Interactive: 0.0"
+        "status": "PENDING"
       },
       {
         "status": "PENDING"
