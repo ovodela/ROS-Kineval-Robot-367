@@ -1,5 +1,5 @@
-//CI grader generates report at 04-04-2023-12-21-34
-//Commit hash: 6bc42b5
+//CI grader generates report at 05-04-2023-02-35-50
+//Commit hash: 26ca54f
 grade = 
 {
   "omkarv": {
@@ -364,22 +364,22 @@ grade =
         "status": "Takehome: 0.75 Interactive: 0.0"
       },
       {
-        "status": "PENDING"
+        "status": "Voted in the URDF showcase: 2.0  (No Takehome)"
       },
       {
-        "status": "PENDING"
+        "status": "Takehome: 0.5 Interactive: 0.2"
       },
       {
-        "status": "PENDING"
+        "status": "Voted in the FSM Dance showcase: 2.0  (No Takehome)"
       },
       {
-        "status": "PENDING"
+        "status": "No Quiz 9, 2 points given"
       },
       {
-        "status": "PENDING"
+        "status": "No Quiz 10, 2 points given"
       },
       {
-        "status": "PENDING"
+        "status": "No Quiz 11, 2 points given"
       }
     ]
   }
