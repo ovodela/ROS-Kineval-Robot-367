@@ -1,5 +1,5 @@
-//CI grader generates report at 09-04-2023-12-26-00
-//Commit hash: 7d049c6
+//CI grader generates report at 09-04-2023-16-39-10
+//Commit hash: ba2e052
 grade = 
 {
   "omkarv": {
@@ -314,7 +314,7 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Search time out\\n'"
+            "Stderr": "b''"
           },
           "Test 1": {
             "Status": "Failed",
@@ -322,7 +322,7 @@ grade =
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Search time out\\n'"
+            "Stderr": "b''"
           },
           "Test 3": {
             "Status": "Failed",
