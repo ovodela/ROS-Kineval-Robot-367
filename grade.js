@@ -1,5 +1,5 @@
-//CI grader generates report at 09-04-2023-05-30-17
-//Commit hash: 1f340b0
+//CI grader generates report at 09-04-2023-11-03-12
+//Commit hash: ac4ec17
 grade = 
 {
   "omkarv": {
@@ -70,9 +70,9 @@ grade =
         }
       },
       "PathPlan_AStar": {
-        "status": "PASS",
+        "status": "PENDING",
         "comments": [
-          "5 out of 5 test cases passed"
+          "4 out of 5 test cases passed"
         ],
         "test results": {
           "Test 0": {
@@ -88,8 +88,8 @@ grade =
             "Stderr": "b''"
           },
           "Test 3": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
           },
           "Test 4": {
             "Status": "Succeed",
@@ -269,7 +269,7 @@ grade =
       "IK_JPseudoInverse": {
         "status": "PENDING",
         "comments": [
-          "0 out of 3 test cases passed"
+          "1 out of 3 test cases passed"
         ],
         "test results": {
           "Test 0": {
@@ -281,7 +281,7 @@ grade =
             "Stderr": "b'robot.dq not defined, please check whether you have assigned value for robot.dq\\n'"
           },
           "Test 2": {
-            "Status": "Failed",
+            "Status": "Succeed",
             "Stderr": "b''"
           }
         }
@@ -318,15 +318,15 @@ grade =
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Search time out\\n'"
+            "Stderr": "b''"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "b''"
+            "Stderr": "b'[ERROR]: Search time out\\n'"
           },
           "Test 3": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Search time out\\n'"
+            "Stderr": "b''"
           }
         }
       },
