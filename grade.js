@@ -1,5 +1,5 @@
-//CI grader generates report at 09-04-2023-11-03-12
-//Commit hash: ac4ec17
+//CI grader generates report at 09-04-2023-12-26-00
+//Commit hash: 7d049c6
 grade = 
 {
   "omkarv": {
@@ -70,9 +70,9 @@ grade =
         }
       },
       "PathPlan_AStar": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "4 out of 5 test cases passed"
+          "5 out of 5 test cases passed"
         ],
         "test results": {
           "Test 0": {
@@ -88,8 +88,8 @@ grade =
             "Stderr": "b''"
           },
           "Test 3": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'initial point added\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\nstart\\nvisit\\ns"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 4": {
             "Status": "Succeed",
@@ -318,7 +318,7 @@ grade =
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "b''"
+            "Stderr": "b'[ERROR]: Search time out\\n'"
           },
           "Test 2": {
             "Status": "Failed",
@@ -326,7 +326,7 @@ grade =
           },
           "Test 3": {
             "Status": "Failed",
-            "Stderr": "b''"
+            "Stderr": "b'[ERROR]: Search time out\\n'"
           }
         }
       },
