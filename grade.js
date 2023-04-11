@@ -1,5 +1,5 @@
-//CI grader generates report at 10-04-2023-21-04-50
-//Commit hash: 7675a98
+//CI grader generates report at 10-04-2023-22-38-57
+//Commit hash: 0c5cdc5
 grade = 
 {
   "omkarv": {
@@ -238,51 +238,51 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'robot.jacobian not defined, please check whether you have assigned value for robot.jacobian\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_0.js:1839\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_0.js:1839:88)\\n"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "b'robot.jacobian not defined, please check whether you have assigned value for robot.jacobian\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_1.js:1839\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_1.js:1839:88)\\n"
           }
         }
       },
       "IK_JTranspose": {
         "status": "PENDING",
         "comments": [
-          "1 out of 3 test cases passed"
+          "0 out of 3 test cases passed"
         ],
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'robot.dq not defined, please check whether you have assigned value for robot.dq\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_0.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_0.js:1845:8"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "b'robot.dq not defined, please check whether you have assigned value for robot.dq\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_1.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_1.js:1845:8"
           },
           "Test 2": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_2.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_2.js:1845:8"
           }
         }
       },
       "IK_JPseudoInverse": {
         "status": "PENDING",
         "comments": [
-          "1 out of 3 test cases passed"
+          "0 out of 3 test cases passed"
         ],
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'robot.dq not defined, please check whether you have assigned value for robot.dq\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_0.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_0.j"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "b'robot.dq not defined, please check whether you have assigned value for robot.dq\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_1.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_1.j"
           },
           "Test 2": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_2.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_2.j"
           }
         }
       },
@@ -294,15 +294,15 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Collision test 0 failed\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_0.js:915\\n    var mstack = matrix_multiply(generate_translation_matrix(q[0], q[1], q[2]), generate_rotation_matrix(q[3], q[4], q[5]));\\n                                 ^\\n\\nReferenceError: generate_rotation_matrix is not defined\\n    at robot_collision_forward_kinematics (/omkarv/MotionPlan_Collision/test_0.js:915:34)\\n    at Object.ro"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Collision test 1 failed\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_1.js:915\\n    var mstack = matrix_multiply(generate_translation_matrix(q[0], q[1], q[2]), generate_rotation_matrix(q[3], q[4], q[5]));\\n                                 ^\\n\\nReferenceError: generate_rotation_matrix is not defined\\n    at robot_collision_forward_kinematics (/omkarv/MotionPlan_Collision/test_1.js:915:34)\\n    at Object.ro"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Collision test 2 failed\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_2.js:915\\n    var mstack = matrix_multiply(generate_translation_matrix(q[0], q[1], q[2]), generate_rotation_matrix(q[3], q[4], q[5]));\\n                                 ^\\n\\nReferenceError: generate_rotation_matrix is not defined\\n    at robot_collision_forward_kinematics (/omkarv/MotionPlan_Collision/test_2.js:915:34)\\n    at Object.ro"
           }
         }
       },
