@@ -87,10 +87,9 @@ function traverse_collision_forward_kinematics_link(link,mstack,q) {
     }
 
     // test collision by transforming obstacles in world to link space
-/*
+
     mstack_inv = matrix_invert_affine(mstack);
-*/
-    mstack_inv = numeric.inv(mstack);
+
 
     var i;
     var j;
@@ -151,15 +150,15 @@ function traverse_collision_forward_kinematics_joint(joint,mstack,q){
 
     if (robot.links_geom_imported){
         if (joint.type === "prismatic"){
-            var mJ = generate_translation_matrix(angle * joint.axis[0],angle*joint.axis[1],angle*joint.axis[2]);
+            var mJ = generate_translation_matrix(angle * joint.axis[0], angle*joint.axis[1], angle*joint.axis[2]);
         }else if ((joint.type === "revolute") | (joint.type === "continuous")){
-            var mJ = quaternion_to_rotation_matrix(quaternion_normalize(quaternion_from_axisangle(angle,joint.axis)));
+            var mJ = kineval.quaternionToRotationMatrix(kineval.quaternionNormalize(kineval.quaternionFromAxisAngle(angle,joint.axis)));
         }else{
             var mJ = generate_identity();
         }
     }
     else{
-        var mJ = quaternion_to_rotation_matrix(quaternion_normalize(quaternion_from_axisangle(angle,joint.axis))); 
+        var mJ = kineval.quaternionToRotationMatrix(kineval.quaternionNormalize(kineval.quaternionFromAxisAngle(angle,joint.axis)));
     }
 
     return traverse_collision_forward_kinematics_link(robot.links[joint.child], matrix_multiply(matrix_multiply(mstack,matrix_multiply(mT,mR)), mJ),q);

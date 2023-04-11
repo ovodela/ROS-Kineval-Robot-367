@@ -113,7 +113,7 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
     index = 0;
     curJoint = endeffector_joint;
     while (flag){
-        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];
+        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.dq[index][0];
         index++;
         if (robot.joints[curJoint].parent === robot.base){
             flag = false;
