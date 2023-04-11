@@ -1,5 +1,5 @@
-//CI grader generates report at 11-04-2023-14-47-27
-//Commit hash: 21bfdb9
+//CI grader generates report at 11-04-2023-16-57-08
+//Commit hash: 630f494
 grade = 
 {
   "omkarv": {
@@ -16,8 +16,10 @@ grade =
         ]
       },
       "ROS Pub/Sub": {
-        "status": "CHECK",
-        "comments": "Passing 3 out of 3 tests"
+        "status": "PENDING",
+        "comments": [
+          "Passing 0 of 3 tests"
+        ]
       },
       "PathPlan_Heap": {
         "status": "PASS",
@@ -219,8 +221,14 @@ grade =
       "FSMDance_SetpointControl": {
         "status": "PENDING",
         "comments": [
-          ""
-        ]
+          "0 out of 1 test cases passed"
+        ],
+        "test results": {
+          "Test 0": {
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b\"/omkarv/FSMDance_SetpointControl/test_0.js:378\\n    for (joint_name in kineval.robot.joints) {\\n                                     ^\\n\\nTypeError: Cannot read property 'joints' of undefined\\n    at Object.robot_pd_control [as robotArmControllerSetpoint] (/omkarv/FSMDance_SetpointControl/test_0.js:378:38)\\n    at test (/home/logan/Desktop/teaching/CI-grader/ci_test"
+          }
+        }
       },
       "FSMDance_FSM": {
         "status": "PENDING",
@@ -349,37 +357,37 @@ grade =
     },
     "quizzes": [
       {
-        "status": "Takehome: 1.0 Interactive: 1.0"
+        "status": "PENDING"
       },
       {
-        "status": "Takehome: 0.75 Interactive: 1.0"
+        "status": "PENDING"
       },
       {
-        "status": "Takehome: 0.9 Interactive: 1.0"
+        "status": "PENDING"
       },
       {
-        "status": "Takehome (Doubled): 1.3  (No Interactive)"
+        "status": "PENDING"
       },
       {
-        "status": "Takehome: 0.75 Interactive: 0.0"
+        "status": "PENDING"
       },
       {
-        "status": "Voted in the URDF showcase: 2.0  (No Takehome)"
+        "status": "PENDING"
       },
       {
-        "status": "Takehome: 0.5 Interactive: 0.2"
+        "status": "PENDING"
       },
       {
-        "status": "Voted in the FSM Dance showcase: 2.0  (No Takehome)"
+        "status": "PENDING"
       },
       {
-        "status": "No Quiz 9, 2 points given"
+        "status": "PENDING"
       },
       {
-        "status": "No Quiz 10, 2 points given"
+        "status": "PENDING"
       },
       {
-        "status": "No Quiz 11, 2 points given"
+        "status": "PENDING"
       }
     ]
   }
