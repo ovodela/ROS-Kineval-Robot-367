@@ -1,5 +1,5 @@
-//CI grader generates report at 10-04-2023-22-38-57
-//Commit hash: 0c5cdc5
+//CI grader generates report at 11-04-2023-14-47-27
+//Commit hash: 21bfdb9
 grade = 
 {
   "omkarv": {
@@ -16,10 +16,8 @@ grade =
         ]
       },
       "ROS Pub/Sub": {
-        "status": "PENDING",
-        "comments": [
-          "Passing 0 of 3 tests"
-        ]
+        "status": "CHECK",
+        "comments": "Passing 3 out of 3 tests"
       },
       "PathPlan_Heap": {
         "status": "PASS",
@@ -238,11 +236,11 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_0.js:1839\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_0.js:1839:88)\\n"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_Jacobian/test_0.js:1839\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_0.j"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_1.js:1839\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_1.js:1839:88)\\n"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_Jacobian/test_1.js:1839\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_1.j"
           }
         }
       },
@@ -254,15 +252,15 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_0.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_0.js:1845:8"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JTranspose/test_0.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_1.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_1.js:1845:8"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JTranspose/test_1.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_2.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_2.js:1845:8"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JTranspose/test_2.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test"
           }
         }
       },
@@ -274,35 +272,35 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_0.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_0.j"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JPseudoInverse/test_0.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInve"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_1.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_1.j"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JPseudoInverse/test_1.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInve"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_2.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];\\n                                                                                       ^\\n\\nReferenceError: indexJoint is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_2.j"
+            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JPseudoInverse/test_2.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInve"
           }
         }
       },
       "MotionPlan_Collision": {
         "status": "PENDING",
         "comments": [
-          "0 out of 3 test cases passed"
+          "1 out of 3 test cases passed"
         ],
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_0.js:915\\n    var mstack = matrix_multiply(generate_translation_matrix(q[0], q[1], q[2]), generate_rotation_matrix(q[3], q[4], q[5]));\\n                                 ^\\n\\nReferenceError: generate_rotation_matrix is not defined\\n    at robot_collision_forward_kinematics (/omkarv/MotionPlan_Collision/test_0.js:915:34)\\n    at Object.ro"
+            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_0.js:1012\\n        var mJ = quaternion_to_rotation_matrix(quaternion_normalize(quaternion_from_axisangle(angle,joint.axis))); \\n                 ^\\n\\nReferenceError: quaternion_to_rotation_matrix is not defined\\n    at traverse_collision_forward_kinematics_joint (/omkarv/MotionPlan_Collision/test_0.js:1012:18)\\n    at traverse_colli"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_1.js:915\\n    var mstack = matrix_multiply(generate_translation_matrix(q[0], q[1], q[2]), generate_rotation_matrix(q[3], q[4], q[5]));\\n                                 ^\\n\\nReferenceError: generate_rotation_matrix is not defined\\n    at robot_collision_forward_kinematics (/omkarv/MotionPlan_Collision/test_1.js:915:34)\\n    at Object.ro"
+            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_1.js:1012\\n        var mJ = quaternion_to_rotation_matrix(quaternion_normalize(quaternion_from_axisangle(angle,joint.axis))); \\n                 ^\\n\\nReferenceError: quaternion_to_rotation_matrix is not defined\\n    at traverse_collision_forward_kinematics_joint (/omkarv/MotionPlan_Collision/test_1.js:1012:18)\\n    at traverse_colli"
           },
           "Test 2": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_2.js:915\\n    var mstack = matrix_multiply(generate_translation_matrix(q[0], q[1], q[2]), generate_rotation_matrix(q[3], q[4], q[5]));\\n                                 ^\\n\\nReferenceError: generate_rotation_matrix is not defined\\n    at robot_collision_forward_kinematics (/omkarv/MotionPlan_Collision/test_2.js:915:34)\\n    at Object.ro"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
