@@ -67,7 +67,9 @@ function robot_collision_forward_kinematics(q){
         var mAdjust = matrix_multiply(generate_rotation_matrix_Y(-Math.PI / 2), generate_rotation_matrix_X(-Math.PI / 2));
         mstack = matrix_multiply(mstack, mAdjust);
     }
+
     return traverse_collision_forward_kinematics_link(robot.links[robot.base], mstack, q);
+
 }
 
 
@@ -143,19 +145,23 @@ function traverse_collision_forward_kinematics_link(link,mstack,q) {
 }
 
 function traverse_collision_forward_kinematics_joint(joint,mstack,q){
-    var mR = generate_rotation_matrix(joint.origin.rpy[0],joint.origin.rpy[1],joint.origin.rpy[2]);
+    var mR = generate_rotation_matrix(joint.origin.rpy[0], joint.origin.rpy[1], joint.origin.rpy[2]);
     var mT = generate_translation_matrix(joint.origin.xyz[0], joint.origin.xyz[1], joint.origin.xyz[2]);
     var angle = q[q_names[joint.name]];
+
     if (robot.links_geom_imported){
         if (joint.type === "prismatic"){
-            var mJ = generate_translation_matrix(angle*joint.axis[0],angle*joint.axis[1],angle*joint.axis[2]);
+            var mJ = generate_translation_matrix(angle * joint.axis[0],angle*joint.axis[1],angle*joint.axis[2]);
         }else if ((joint.type === "revolute") | (joint.type === "continuous")){
             var mJ = quaternion_to_rotation_matrix(quaternion_normalize(quaternion_from_axisangle(angle,joint.axis)));
         }else{
-            var mJ = generate_identity(4);
+            var mJ = generate_identity();
         }
-    }else{
+    }
+    else{
         var mJ = quaternion_to_rotation_matrix(quaternion_normalize(quaternion_from_axisangle(angle,joint.axis))); 
     }
-    return traverse_collision_forward_kinematics_link(robot.links[joint.child],matrix_multiply(matrix_multiply(mstack,matrix_multiply(mT,mR)), mJ),q);
+
+    return traverse_collision_forward_kinematics_link(robot.links[joint.child], matrix_multiply(matrix_multiply(mstack,matrix_multiply(mT,mR)), mJ),q);
+
 }
