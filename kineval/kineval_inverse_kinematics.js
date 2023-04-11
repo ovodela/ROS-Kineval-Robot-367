@@ -66,8 +66,10 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
     }
 
     for (var i = 0; i < 6; i++){
-        robot.dx[i] = [endeffector_target_world.position[i] - vec[i][0]];
-        if (i >= 3){
+        if (i < 3){
+            robot.dx[i] = [endeffector_target_world.position[i] - vec[i][0]];
+        }
+        else{
             if (kineval.params.ik_orientation_included){
                 robot.dx[i] = [endeffector_target_world.orientation[i-3] - vec[i][0]];
             }
