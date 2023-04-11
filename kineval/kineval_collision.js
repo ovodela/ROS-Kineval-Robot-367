@@ -165,3 +165,11 @@ function traverse_collision_forward_kinematics_joint(joint,mstack,q){
     return traverse_collision_forward_kinematics_link(robot.links[joint.child], matrix_multiply(matrix_multiply(mstack,matrix_multiply(mT,mR)), mJ),q);
 
 }
+
+
+function   generate_rotation_matrix (r,p,y){
+    var m = matrix_multiply( generate_rotation_matrix_Z( y ), generate_rotation_matrix_Y( p ) );
+    m = matrix_multiply( m, generate_rotation_matrix_X( r ) );
+    return m;
+
+}
