@@ -57,7 +57,7 @@ kineval.setpointClockMovement = function execute_clock() {
 
 kineval.robotArmControllerSetpoint = function robot_pd_control () {
 
-    // if update not requested, exit routine
+    // if update not re`quested, exit routine
     if ((!kineval.params.update_pd)&&(!kineval.params.persist_pd)) return; 
 
     kineval.params.update_pd = false; // if update requested, clear request and process setpoint control

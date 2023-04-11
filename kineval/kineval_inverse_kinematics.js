@@ -47,9 +47,9 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
     // [NOTICE]: Please assign the following 3 variables to test against CI grader
 
     // ---------------------------------------------------------------------------
-    // robot.dx = []              // Error term, matrix size: 6 x 1, e.g., [[1],[1],[1],[0],[0],[0]]
-    // robot.jacobian = []        // Jacobian matrix of current IK iteration matrix size: 6 x N
-    // robot.dq = []              // Joint configuration change term (don't include step length)  
+    robot.dx = []              // Error term, matrix size: 6 x 1, e.g., [[1],[1],[1],[0],[0],[0]]
+    robot.jacobian = []        // Jacobian matrix of current IK iteration matrix size: 6 x N
+    robot.dq = []              // Joint configuration change term (don't include step length)  
     // ---------------------------------------------------------------------------
 
     // Explanation of above 3 variables:
@@ -57,8 +57,104 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
     // dtheta = alpha * robot.dq   // alpha: step length
 
 
+    var endeXYZ = matrix_multiply(robot.joints[endeffector_joint].xform, endeffector_position_local);
+    var endeRPY = xTransTheta(robot.joints[endeffector_joint].xform);
+    var vec = [];
+    for (var i = 0; i < 3; i++){
+        vec[i] = [endeXYZ[i][0]];
+        vec[i+3] = [endeRPY[i][0]];
+    }
+
+    for (var i = 0; i < 6; i++){
+        robot.dx[i] = [endeffector_target_world.position[i] - vec[i][0]];
+        if (i >= 3){
+            if (kineval.params.ik_orientation_included){
+                robot.dx[i] = [endeffector_target_world.orientation[i-3] - vec[i][0]];
+            }
+            else{
+                robot.dx[i] = [0];
+            }
+        }
+    }
+
+    var index = 0;
+    var curJoint = endeffector_joint;
+    
+    var flag = true;
+    while (flag){
+        var tempAxis = vec_multiply(robot.joints[curJoint].xform,robot.joints[curJoint].axis)
+        tempAxis = vector_normalize(tempAxis);
+        if (robot.joints[curJoint].type === "prismatic"){
+            robot.jacobian[index] = [tempAxis[0], tempAxis[1], tempAxis[2], 0, 0, 0];
+        }else{
+            var jointXYZ = matrix_multiply(robot.joints[curJoint].xform, [[0],[0],[0],[1]]);
+            var diffJointXYZ = vec_minus(endeXYZ,jointXYZ);
+            let temp_cross = vector_cross(tempAxis, diffJointXYZ);
+            robot.jacobian[index] = [temp_cross[0], temp_cross[1], temp_cross[2], tempAxis[0], tempAxis[1], tempAxis[2]];
+        }
+        if (robot.joints[curJoint].parent === robot.base){
+            flag = false;
+        }
+        index++;
+        curJoint = robot.links[robot.joints[curJoint].parent].parent;
+    }
+
+    if (!kineval.params.ik_pseudoinverse){
+        robot.dq = matrix_multiply(robot.jacobian, robot.dx);
+    }
+    else{
+        var Tjacob = matrix_transpose(robot.jacobian);
+        robot.dq = matrix_multiply(matrix_pseudoinverse(Tjacob), robot.dx);
+    }
+
+    flag = true;
+    index = 0;
+    curJoint = endeffector_joint;
+    while (flag){
+        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[indexJoint][0];
+        index++;
+        if (robot.joints[curJoint].parent === robot.base){
+            flag = false;
+        }
+        curJoint = robot.links[robot.joints[curJoint].parent].parent;
+    }
 
 }
 
 
+
+function xTransTheta(xf){
+    
+    let theta_1 = [Math.atan2(xf[2][1], xf[2][2])];
+    let theta_3 = [Math.atan2(xf[1][0], xf[0][0])];
+
+    let temp = Math.pow(xf[2][1], 2) + Math.pow(xf[2][2], 2);
+    temp = Math.pow(temp, 0.5);
+    let theta_2 = [Math.atan2(-xf[2][0], temp)];
+    
+    return [theta_1,theta_2,theta_3];
+}
+
+function vec_multiply(m1, v1){
+    var v = [];
+    var i;
+    var j;
+    v1 = [v1[0], v1[1], v1[2], 0];
+    for (i = 0; i < m1.length; ++i){
+        v[i] = 0;
+        for (j = 0; j < m1[0].length; ++j){
+            v[i] += m1[i][j] * v1[j];
+        }
+    }
+    v = [v[0], v[1], v[2]];
+    return v;
+}
+
+function vec_minus(v1, v2) {
+    var v = [];
+    for (i = 0; i < v1.length; ++i) {
+        v[i] = v1[i] - v2[i];
+    }
+    return v;
+}
 
