@@ -144,24 +144,24 @@ function traverse_collision_forward_kinematics_link(link,mstack,q) {
 }
 
 function traverse_collision_forward_kinematics_joint(joint,mstack,q){
-    var mR = generate_rotation_matrix(joint.origin.rpy[0], joint.origin.rpy[1], joint.origin.rpy[2]);
-    var mT = generate_translation_matrix(joint.origin.xyz[0], joint.origin.xyz[1], joint.origin.xyz[2]);
+    var rotationMat = generate_rotation_matrix(joint.origin.rpy[0], joint.origin.rpy[1], joint.origin.rpy[2]);
+    var transMat = generate_translation_matrix(joint.origin.xyz[0], joint.origin.xyz[1], joint.origin.xyz[2]);
     var angle = q[q_names[joint.name]];
 
     if (robot.links_geom_imported){
         if (joint.type === "prismatic"){
-            var mJ = generate_translation_matrix(angle * joint.axis[0], angle*joint.axis[1], angle*joint.axis[2]);
+            var forwardMat = generate_translation_matrix(angle * joint.axis[0], angle*joint.axis[1], angle*joint.axis[2]);
         }else if ((joint.type === "revolute") | (joint.type === "continuous")){
-            var mJ = kineval.quaternionToRotationMatrix(kineval.quaternionNormalize(kineval.quaternionFromAxisAngle(angle,joint.axis)));
+            var forwardMat = kineval.quaternionToRotationMatrix(kineval.quaternionNormalize(kineval.quaternionFromAxisAngle(angle,joint.axis)));
         }else{
-            var mJ = generate_identity();
+            var forwardMat = generate_identity();
         }
     }
     else{
-        var mJ = kineval.quaternionToRotationMatrix(kineval.quaternionNormalize(kineval.quaternionFromAxisAngle(angle,joint.axis)));
+        var forwardMat = kineval.quaternionToRotationMatrix(kineval.quaternionNormalize(kineval.quaternionFromAxisAngle(angle,joint.axis)));
     }
 
-    return traverse_collision_forward_kinematics_link(robot.links[joint.child], matrix_multiply(matrix_multiply(mstack,matrix_multiply(mT,mR)), mJ),q);
+    return traverse_collision_forward_kinematics_link(robot.links[joint.child], matrix_multiply(matrix_multiply(mstack,matrix_multiply(transMat,rotationMat)), forwardMat),q);
 
 }
 
