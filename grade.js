@@ -1,5 +1,5 @@
-//CI grader generates report at 11-04-2023-16-57-08
-//Commit hash: 630f494
+//CI grader generates report at 12-04-2023-12-54-57
+//Commit hash: 9b59c26
 grade = 
 {
   "omkarv": {
@@ -16,10 +16,8 @@ grade =
         ]
       },
       "ROS Pub/Sub": {
-        "status": "PENDING",
-        "comments": [
-          "Passing 0 of 3 tests"
-        ]
+        "status": "CHECK - PARTIAL CREDIT",
+        "comments": "Passing 3 out of 3 tests"
       },
       "PathPlan_Heap": {
         "status": "PASS",
@@ -219,14 +217,14 @@ grade =
         ]
       },
       "FSMDance_SetpointControl": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "0 out of 1 test cases passed"
+          "1 out of 1 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/FSMDance_SetpointControl/test_0.js:378\\n    for (joint_name in kineval.robot.joints) {\\n                                     ^\\n\\nTypeError: Cannot read property 'joints' of undefined\\n    at Object.robot_pd_control [as robotArmControllerSetpoint] (/omkarv/FSMDance_SetpointControl/test_0.js:378:38)\\n    at test (/home/logan/Desktop/teaching/CI-grader/ci_test"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
@@ -244,51 +242,51 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_Jacobian/test_0.js:1839\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_0.j"
+            "Stderr": "b'[ERROR]: Incorrect IK Jacobian for test 0\\n'"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_Jacobian/test_1.js:1839\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_1.j"
+            "Stderr": "b'[ERROR]: Incorrect IK Jacobian for test 1\\n'"
           }
         }
       },
       "IK_JTranspose": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "0 out of 3 test cases passed"
+          "3 out of 3 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JTranspose/test_0.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 1": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JTranspose/test_1.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 2": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JTranspose/test_2.js:1845\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
       "IK_JPseudoInverse": {
-        "status": "PENDING",
+        "status": "PASS",
         "comments": [
-          "0 out of 3 test cases passed"
+          "3 out of 3 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JPseudoInverse/test_0.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInve"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 1": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JPseudoInverse/test_1.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInve"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 2": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b\"/omkarv/IK_JPseudoInverse/test_2.js:1844\\n        robot.joints[curJoint].control += kineval.params.ik_steplength * robot.control[index][0];\\n                                                                                             ^\\n\\nTypeError: Cannot read property '0' of undefined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInve"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
@@ -300,11 +298,11 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_0.js:1012\\n        var mJ = quaternion_to_rotation_matrix(quaternion_normalize(quaternion_from_axisangle(angle,joint.axis))); \\n                 ^\\n\\nReferenceError: quaternion_to_rotation_matrix is not defined\\n    at traverse_collision_forward_kinematics_joint (/omkarv/MotionPlan_Collision/test_0.js:1012:18)\\n    at traverse_colli"
+            "Stderr": "b'[ERROR]: Collision test 0 failed\\n'"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/MotionPlan_Collision/test_1.js:1012\\n        var mJ = quaternion_to_rotation_matrix(quaternion_normalize(quaternion_from_axisangle(angle,joint.axis))); \\n                 ^\\n\\nReferenceError: quaternion_to_rotation_matrix is not defined\\n    at traverse_collision_forward_kinematics_joint (/omkarv/MotionPlan_Collision/test_1.js:1012:18)\\n    at traverse_colli"
+            "Stderr": "b'[ERROR]: Collision test 1 failed\\n'"
           },
           "Test 2": {
             "Status": "Succeed",
@@ -357,37 +355,37 @@ grade =
     },
     "quizzes": [
       {
-        "status": "PENDING"
+        "status": "Takehome: 1.0 Interactive: 1.0"
       },
       {
-        "status": "PENDING"
+        "status": "Takehome: 0.75 Interactive: 1.0"
       },
       {
-        "status": "PENDING"
+        "status": "Takehome: 0.9 Interactive: 1.0"
       },
       {
-        "status": "PENDING"
+        "status": "Takehome (Doubled): 1.3  (No Interactive)"
       },
       {
-        "status": "PENDING"
+        "status": "Takehome: 0.75 Interactive: 0.0"
       },
       {
-        "status": "PENDING"
+        "status": "Voted in the URDF showcase: 2.0  (No Takehome)"
       },
       {
-        "status": "PENDING"
+        "status": "Takehome: 0.5 Interactive: 0.2"
       },
       {
-        "status": "PENDING"
+        "status": "Voted in the FSM Dance showcase: 2.0  (No Takehome)"
       },
       {
-        "status": "PENDING"
+        "status": "No Quiz 9, 2 points given"
       },
       {
-        "status": "PENDING"
+        "status": "No Quiz 10, 2 points given"
       },
       {
-        "status": "PENDING"
+        "status": "No Quiz 11, 2 points given"
       }
     ]
   }
