@@ -1,5 +1,5 @@
-//CI grader generates report at 12-04-2023-12-54-57
-//Commit hash: 9b59c26
+//CI grader generates report at 13-04-2023-18-37-49
+//Commit hash: 9349a6a
 grade = 
 {
   "omkarv": {
@@ -16,7 +16,7 @@ grade =
         ]
       },
       "ROS Pub/Sub": {
-        "status": "CHECK - PARTIAL CREDIT",
+        "status": "CHECK",
         "comments": "Passing 3 out of 3 tests"
       },
       "PathPlan_Heap": {
