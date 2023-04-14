@@ -1,5 +1,5 @@
-//CI grader generates report at 13-04-2023-18-37-49
-//Commit hash: 9349a6a
+//CI grader generates report at 14-04-2023-12-51-09
+//Commit hash: 7f54b95
 grade = 
 {
   "omkarv": {
@@ -16,11 +16,11 @@ grade =
         ]
       },
       "ROS Pub/Sub": {
-        "status": "CHECK",
+        "status": "PASS - on time (full credit)",
         "comments": "Passing 3 out of 3 tests"
       },
       "PathPlan_Heap": {
-        "status": "PASS",
+        "status": "PASS - on time (full credit)",
         "comments": [
           "10 out of 10 test cases passed"
         ],
@@ -68,7 +68,7 @@ grade =
         }
       },
       "PathPlan_AStar": {
-        "status": "PASS",
+        "status": "PASS - on time (full credit)",
         "comments": [
           "5 out of 5 test cases passed"
         ],
@@ -96,7 +96,7 @@ grade =
         }
       },
       "Pendularm_Euler": {
-        "status": "PASS",
+        "status": "PASS - on time (full credit)",
         "comments": [
           "2 out of 2 test cases passed"
         ],
@@ -112,7 +112,7 @@ grade =
         }
       },
       "Pendularm_VelocityVerlet": {
-        "status": "PASS",
+        "status": "PASS - on time (full credit)",
         "comments": [
           "2 out of 2 test cases passed"
         ],
@@ -128,7 +128,7 @@ grade =
         }
       },
       "Pendularm_PID": {
-        "status": "PASS",
+        "status": "PASS - on time (full credit)",
         "comments": [
           "1 out of 1 test cases passed"
         ],
@@ -140,7 +140,7 @@ grade =
         }
       },
       "FK_MatrixRoutines": {
-        "status": "PASS",
+        "status": "PASS - past two weeks (60% partial credit)",
         "comments": [
           "1 out of 1 test cases passed"
         ],
@@ -152,7 +152,7 @@ grade =
         }
       },
       "FK_Transforms": {
-        "status": "PASS",
+        "status": "PASS - on time (full credit)",
         "comments": [
           "8 out of 8 test cases passed"
         ],
@@ -198,7 +198,7 @@ grade =
         ]
       },
       "FSMDance_Quaternion": {
-        "status": "PASS",
+        "status": "PASS - on time (full credit)",
         "comments": [
           "1 out of 1 test cases passed"
         ],
@@ -209,7 +209,6 @@ grade =
           }
         }
       },
-      "FSMDance_RexArm": "FSMDance_RexArm",
       "FSMDance_BaseControl": {
         "status": "PENDING",
         "comments": [
@@ -217,7 +216,7 @@ grade =
         ]
       },
       "FSMDance_SetpointControl": {
-        "status": "PASS",
+        "status": "PASS - past two weeks (60% partial credit)",
         "comments": [
           "1 out of 1 test cases passed"
         ],
@@ -251,7 +250,7 @@ grade =
         }
       },
       "IK_JTranspose": {
-        "status": "PASS",
+        "status": "PASS - past two weeks (60% partial credit)",
         "comments": [
           "3 out of 3 test cases passed"
         ],
@@ -271,7 +270,7 @@ grade =
         }
       },
       "IK_JPseudoInverse": {
-        "status": "PASS",
+        "status": "PASS - past two weeks (60% partial credit)",
         "comments": [
           "3 out of 3 test cases passed"
         ],
