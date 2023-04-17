@@ -512,10 +512,10 @@ function tree_add_edge(tree,q1_idx,q2_idx) {
         }
     }
     
-    
-    
-    function path_dfs(q1, q2){
-        return Math.pow( Math.pow( (q1[0] - q2[0]), 2 ) + Math.pow( (q1[2] - q2[2]), 2 ) + Math.pow( (q1[4] - q2[4]), 2 )/5, 0.5 );
-    }
-    
+        
+        
+        function path_dfs(q1, q2){
+            return Math.pow( Math.pow( (q1[0] - q2[0]), 2 ) + Math.pow( (q1[2] - q2[2]), 2 ) + Math.pow( (q1[4] - q2[4]), 2 )/5, 0.5 );
+        }
+        
 
