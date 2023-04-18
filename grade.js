@@ -1,5 +1,5 @@
-//CI grader generates report at 17-04-2023-12-59-01
-//Commit hash: e088336
+//CI grader generates report at 18-04-2023-14-27-15
+//Commit hash: ab01e56
 grade = 
 {
   "omkarv": {
@@ -192,7 +192,7 @@ grade =
         }
       },
       "FK_JointRendering": {
-        "status": "PENDING",
+        "status": "MISSING",
         "comments": [
           ""
         ]
@@ -210,7 +210,7 @@ grade =
         }
       },
       "FSMDance_BaseControl": {
-        "status": "PENDING",
+        "status": "MISSING",
         "comments": [
           ""
         ]
@@ -228,7 +228,7 @@ grade =
         }
       },
       "FSMDance_FSM": {
-        "status": "PENDING",
+        "status": "MISSING FSM Dance and presentation",
         "comments": [
           ""
         ]
@@ -241,51 +241,51 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Incorrect IK Jacobian for test 0\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_0.js:1828\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "b'[ERROR]: Incorrect IK Jacobian for test 1\\n'"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_1.js:1828\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK"
           }
         }
       },
       "IK_JTranspose": {
-        "status": "PASS - past two weeks (60% partial credit)",
+        "status": "PENDING",
         "comments": [
-          "3 out of 3 test cases passed"
+          "0 out of 3 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_0.js:1834\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/"
           },
           "Test 1": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_1.js:1834\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/"
           },
           "Test 2": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_2.js:1834\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/"
           }
         }
       },
       "IK_JPseudoInverse": {
-        "status": "PASS - past two weeks (60% partial credit)",
+        "status": "PENDING",
         "comments": [
-          "3 out of 3 test cases passed"
+          "0 out of 3 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_0.js:1833\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omk"
           },
           "Test 1": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_1.js:1833\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omk"
           },
           "Test 2": {
-            "Status": "Succeed",
-            "Stderr": "b''"
+            "Status": "Failed",
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_2.js:1833\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omk"
           }
         }
       },
@@ -310,26 +310,26 @@ grade =
         }
       },
       "MotionPlan_2DRRTConnect": {
-        "status": "PENDING",
+        "status": "PASS - within two weeks (80% partial credit)",
         "comments": [
-          "0 out of 4 test cases passed"
+          "4 out of 4 test cases passed"
         ],
         "test results": {
           "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Search time out\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 1": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Search time out\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 2": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Search time out\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           },
           "Test 3": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Search time out\\n'"
+            "Status": "Succeed",
+            "Stderr": "b''"
           }
         }
       },
