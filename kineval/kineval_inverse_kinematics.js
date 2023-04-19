@@ -102,7 +102,7 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
         let t_2 = [];
         let name = array_of_joints[i];
 
-        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];
+        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[name].axis[2]], [1]];
         let ki = matrix_multiply(robot.joints[name].xform, termS);
         let oi = matrix_multiply(robot.joints[name].xform, [[0],[0],[0],[1]]);
 
