@@ -48,14 +48,14 @@ kineval.randomizeIKtrial = function randomIKtrial () {
         kineval.params.trial_ik_random.distance_current = Math.sqrt( Math.pow(kineval.params.ik_target.position[0][0] - endeffector_world[0][0], 2.0) + Math.pow(kineval.params.ik_target.position[1][0] - endeffector_world[1][0], 2.0) + Math.pow(kineval.params.ik_target.position[2][0] - endeffector_world[2][0], 2.0) );
     
         // reached the end
-        if (kineval.params.trial_ik_random.distance_current < 0.01) {
+        if (kineval.params.trial_ik_random.distance_current < .01) {
             textbar.innerHTML = "IK trial Random: target " + kineval.params.trial_ik_random.targets + " reached at time " + kineval.params.trial_ik_random.time;
 
             kineval.params.trial_ik_random.targets++;
 
-            kineval.params.ik_target.position[0][0] = 1.2 * (Math.random() - 0.5);
-            kineval.params.ik_target.position[1][0] = 1.2 * (Math.random() - 0.5) + 1.5;
-            kineval.params.ik_target.position[2][0] = 0.7 * (Math.random() - 0.5) + 0.5;
+            kineval.params.ik_target.position[0][0] = 1.2 * (Math.random() - .5);
+            kineval.params.ik_target.position[1][0] = 1.2 * (Math.random() - .5) + 1.5;
+            kineval.params.ik_target.position[2][0] = .7 * (Math.random() - .5) + .5;
         }
 }
 

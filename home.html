@@ -141,6 +141,15 @@ function my_init() {
 
     kineval.startingPlaceholderInit(); // a quick and dirty JavaScript tutorial
 
+    if (robot.name === 'mr2'){
+        kineval.params.dance_sequence_index = [0,1,2,0,2,0,2,0,1,2,0,2,0,2];
+        kineval.params.dance_pose_index = 0;
+        kineval.setpoints =
+            [{"base":0,"clavicle_right_yaw":0,"shoulder_right_yaw":0,"upperarm_right_pitch":0,"forearm_right_yaw":0,"clavicle_left_roll":0},
+             {"base":0,"clavicle_right_yaw":3*Math.PI/4,"shoulder_right_yaw":0,"upperarm_right_pitch":-3*Math.PI/4,"forearm_right_yaw":0,"clavicle_left_roll":0},
+             {"base":0,"clavicle_right_yaw":Math.PI/2,"shoulder_right_yaw":0,"upperarm_right_pitch":-Math.PI,"forearm_right_yaw":-Math.PI/2,"clavicle_left_roll":0}
+            ];
+    }
 }
 
 //////////////////////////////////////////////////
