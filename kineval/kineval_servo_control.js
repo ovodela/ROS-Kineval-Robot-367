@@ -32,12 +32,13 @@ kineval.setpointDanceSequence = function execute_setpoints() {
         kineval.params.setpoint_target[x] = kineval.setpoints[kineval.params.dance_sequence_index[kineval.params.dance_pose_index]][x];
         var error = kineval.params.setpoint_target[x] - robot.joints[x].angle;
         
-        if(error < 0.01) 
-            counter += 1;
-        s += 1;
+        if(error < 0.01){ 
+            counter++;
+        }
+        s++;
     }
     if(counter === s){
-        kineval.params.dance_pose_index += 1;
+        kineval.params.dance_pose_index++;
         kineval.params.dance_pose_index = kineval.params.dance_pose_index % kineval.params.dance_sequence_index.length;
     }        
     

@@ -88,8 +88,8 @@ kineval.traverseFKBase = function traverseFKBase(ms) {
     // ms = [generate_identity(), generate_identity()];
 
     //updating the stack for the base value
-    ms[1] = matrix_multiply(ms[1], translation_of_matrix(robot.origin.xyz, robot.origin.rpy));
-    robot.origin.xform = ms[1];
+    ms[ms.length - 1] = matrix_multiply(ms[ms.length - 1], translation_of_matrix(robot.origin.xyz, robot.origin.rpy));
+    robot.origin.xform = ms[ms.length - 1];
 
     robot_heading = matrix_multiply(robot.origin.xform, [[0], [0], [1], [1]]);
     robot_lateral = matrix_multiply(robot.origin.xform, [[1], [0], [0], [1]]);
@@ -102,18 +102,12 @@ kineval.traverseFKBase = function traverseFKBase(ms) {
 kineval.traverseFKLink = function traverseFKLink(ms, link) {
     robot.links[link].xform = ms[ms.length - 1];
         
-    //no children
-    if(!('children' in robot.links[link])){
-        ms.pop();
-        return;
+    if('children' in robot.links[link]){
+        for(var i = 0; i < robot.links[link].children.length; i++){
+            kineval.traverseFKJoint(ms, robot.links[link].children[i]);
+        }
     }
 
-    //traverse through children joints
-    let i = 0;
-    while(i < robot.links[link].children.length){
-        kineval.traverseFKJoint(ms, robot.links[link].children[i]);
-        ++i;
-    }
     ms.pop();
 }
 

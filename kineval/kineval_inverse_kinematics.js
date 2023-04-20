@@ -134,7 +134,7 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
         robot.dq = matrix_multiply(matrix_transpose(robot.jacobian), robot.dx);
     } 
 
-    for(var i = 0; i < jointArray.length ; i++){
+    for(var i = 0; i < array_of_joints.length ; i++){
         robot.joints[array_of_joints[i]].control = kineval.params.ik_steplength * robot.dq[i];
     }
 }
