@@ -42,7 +42,7 @@ kineval.randomizeIKtrial = function randomIKtrial () {
     // kineval.params.trial_ik_random.time = cur_time.getTime()-kineval.params.trial_ik_random.start.getTime();
 
         // find the positino of tthe eneffector in the world
-        endeffector_world = matrix_multiply(robot.joints[robot.endeffector.frame].xform,robot.endeffector.position);
+        endeffector_world = matrix_multiply(robot.joints[robot.endeffector.frame].xform, robot.endeffector.position);
     
         // calculate distance of target fromt the endeffector
         kineval.params.trial_ik_random.distance_current = Math.sqrt( Math.pow(kineval.params.ik_target.position[0][0] - endeffector_world[0][0], 2.0) + Math.pow(kineval.params.ik_target.position[1][0] - endeffector_world[1][0], 2.0) + Math.pow(kineval.params.ik_target.position[2][0] - endeffector_world[2][0], 2.0) );
@@ -51,7 +51,7 @@ kineval.randomizeIKtrial = function randomIKtrial () {
         if (kineval.params.trial_ik_random.distance_current < 0.01) {
             textbar.innerHTML = "IK trial Random: target " + kineval.params.trial_ik_random.targets + " reached at time " + kineval.params.trial_ik_random.time;
 
-            kineval.params.trial_ik_random.targets += 1;
+            kineval.params.trial_ik_random.targets++;
 
             kineval.params.ik_target.position[0][0] = 1.2 * (Math.random() - 0.5);
             kineval.params.ik_target.position[1][0] = 1.2 * (Math.random() - 0.5) + 1.5;
@@ -75,14 +75,16 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
     // robot.dq = T(robot.jacobian) * robot.dx  // where T(robot.jacobian) means apply some transformations to the Jacobian matrix, it could be Transpose, PseudoInverse, etc.
     // dtheta = alpha * robot.dq   // alpha: step length
 
-    for(let i = 0; i < 6; i++)
+    for(var i = 0; i < 6; i++){
         robot.dx[i] = [0]; 
+    }
     
     var current_joint = endeffector_joint;
     var array_of_joints = [];
     array_of_joints.unshift(current_joint);
     while(robot.joints[current_joint].parent != robot.base){
-        let link = robot.joints[current_joint].parent;
+        var link = robot.joints[current_joint].parent;
+
         current_joint = robot.links[link].parent;
         array_of_joints.unshift(current_joint);
     }
@@ -98,13 +100,13 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
     var r6 = [];
 
     for(var i = 0; i < array_of_joints.length; i++){
-        let temp_W = [];
-        let t_2 = [];
-        let name = array_of_joints[i];
+        var temp_W = [];
+        var t_2 = [];
+        var name = array_of_joints[i];
 
-        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[name].axis[2]], [1]];
-        let ki = matrix_multiply(robot.joints[name].xform, termS);
-        let oi = matrix_multiply(robot.joints[name].xform, [[0],[0],[0],[1]]);
+        var termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[name].axis[2]], [1]];
+        var ki = matrix_multiply(robot.joints[name].xform, termS);
+        var oi = matrix_multiply(robot.joints[name].xform, [[0],[0],[0],[1]]);
 
         temp_W.push(ki[0][0] - oi[0][0]);
         temp_W.push(ki[1][0] - oi[1][0]);
@@ -114,7 +116,7 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
         t_2.push(mult_p[1][0] - oi[1][0]);
         t_2.push(mult_p[2][0] - oi[2][0]);
 
-        let temp_V = vector_cross(temp_W, t_2);
+        var temp_V = vector_cross(temp_W, t_2);
         
         r1.push(temp_V[0]);
         r2.push(temp_V[1]);
@@ -127,6 +129,12 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
 
     robot.jacobian = [r1, r2, r3, r4, r5, r6];
 
+    var mult_mat = matrix_multiply(robot.joints[endeffector_joint].xform,endeffector_position_local);
+    for(var i = 0; i < 3; i++){
+        robot.dx[i] = [endeffector_target_world.position[i] - mult_mat[i]];
+    }
+
+    
     if(kineval.params.ik_pseudoinverse){
         robot.dq = matrix_multiply(matrix_pseudoinverse(robot.jacobian), robot.dx);
     } 
@@ -134,7 +142,7 @@ kineval.iterateIK = function iterate_inverse_kinematics(endeffector_target_world
         robot.dq = matrix_multiply(matrix_transpose(robot.jacobian), robot.dx);
     } 
 
-    for(var i = 0; i < array_of_joints.length ; i++){
+    for(var i = 0; i < array_of_joints.length; i++){
         robot.joints[array_of_joints[i]].control = kineval.params.ik_steplength * robot.dq[i];
     }
 }
