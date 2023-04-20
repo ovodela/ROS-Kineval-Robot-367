@@ -1,5 +1,5 @@
-//CI grader generates report at 19-04-2023-13-02-32
-//Commit hash: 727015e
+//CI grader generates report at 19-04-2023-18-28-26
+//Commit hash: 953d5c6
 grade = 
 {
   "omkarv": {
@@ -241,11 +241,11 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_0.js:1828\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_0.js:1860\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_0.js:1860:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_test"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_1.js:1828\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_1.js:1860\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_1.js:1860:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_test"
           }
         }
       },
@@ -257,15 +257,15 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_0.js:1834\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_0.js:1866\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_0.js:1866:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_1.js:1834\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_1.js:1866\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_1.js:1866:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_2.js:1834\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_2.js:1866\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_2.js:1866:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_"
           }
         }
       },
@@ -277,15 +277,15 @@ grade =
         "test results": {
           "Test 0": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_0.js:1833\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omk"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_0.js:1865\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_0.js:1865:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-gr"
           },
           "Test 1": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_1.js:1833\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omk"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_1.js:1865\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_1.js:1865:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-gr"
           },
           "Test 2": {
             "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_2.js:1833\\n        let termS = [[robot.joints[name].axis[0]], [robot.joints[name].axis[1]], [robot.joints[jointName].axis[2]], [1]];\\n                                                                                               ^\\n\\nReferenceError: jointName is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omk"
+            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_2.js:1865\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_2.js:1865:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-gr"
           }
         }
       },
