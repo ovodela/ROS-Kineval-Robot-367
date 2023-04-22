@@ -1,5 +1,5 @@
-//CI grader generates report at 19-04-2023-18-28-26
-//Commit hash: 953d5c6
+//CI grader generates report at 22-04-2023-11-56-20
+//Commit hash: aa1a0ab
 grade = 
 {
   "omkarv": {
@@ -9,383 +9,41 @@ grade =
     "course": "ROB 320/EECS 367 W23",
     "repository": "AutoRob-WN23/kineval-stencil-ovodela",
     "assignments": {
-      "Honor": {
-        "status": "CHECK",
-        "comments": [
-          "comment: honor code certified"
-        ]
-      },
-      "ROS Pub/Sub": {
-        "status": "PASS - on time (full credit)",
-        "comments": "Passing 3 out of 3 tests"
-      },
-      "PathPlan_Heap": {
-        "status": "PASS - on time (full credit)",
-        "comments": [
-          "10 out of 10 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 1": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 2": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 3": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 4": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 5": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 6": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 7": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 8": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 9": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "PathPlan_AStar": {
-        "status": "PASS - on time (full credit)",
-        "comments": [
-          "5 out of 5 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 1": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 2": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 3": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 4": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "Pendularm_Euler": {
-        "status": "PASS - on time (full credit)",
-        "comments": [
-          "2 out of 2 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 1": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "Pendularm_VelocityVerlet": {
-        "status": "PASS - on time (full credit)",
-        "comments": [
-          "2 out of 2 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 1": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "Pendularm_PID": {
-        "status": "PASS - on time (full credit)",
-        "comments": [
-          "1 out of 1 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "FK_MatrixRoutines": {
-        "status": "PASS - within two weeks (80% partial credit)",
-        "comments": [
-          "1 out of 1 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "FK_Transforms": {
-        "status": "PASS - on time (full credit)",
-        "comments": [
-          "8 out of 8 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 1": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 2": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 3": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 4": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 5": {
-            "Status": "Succeed",
-            "Stderr": "Only for graduate session, skip testing"
-          },
-          "Test 6": {
-            "Status": "Succeed",
-            "Stderr": "Only for graduate session, skip testing"
-          },
-          "Test 7": {
-            "Status": "Succeed",
-            "Stderr": "Only for graduate session, skip testing"
-          }
-        }
-      },
-      "FK_JointRendering": {
-        "status": "MISSING",
-        "comments": [
-          ""
-        ]
-      },
-      "FSMDance_Quaternion": {
-        "status": "PASS - on time (full credit)",
-        "comments": [
-          "1 out of 1 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "FSMDance_BaseControl": {
-        "status": "MISSING",
-        "comments": [
-          ""
-        ]
-      },
-      "FSMDance_SetpointControl": {
-        "status": "PASS - past two weeks (60% partial credit)",
-        "comments": [
-          "1 out of 1 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "FSMDance_FSM": {
-        "status": "MISSING FSM Dance and presentation",
-        "comments": [
-          ""
-        ]
-      },
-      "IK_Jacobian": {
-        "status": "PENDING",
-        "comments": [
-          "0 out of 2 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_0.js:1860\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_0.js:1860:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_test"
-          },
-          "Test 1": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_Jacobian/test_1.js:1860\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_Jacobian/test_1.js:1860:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_test"
-          }
-        }
-      },
-      "IK_JTranspose": {
-        "status": "PENDING",
-        "comments": [
-          "0 out of 3 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_0.js:1866\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_0.js:1866:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_"
-          },
-          "Test 1": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_1.js:1866\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_1.js:1866:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_"
-          },
-          "Test 2": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JTranspose/test_2.js:1866\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JTranspose/test_2.js:1866:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-grader/ci_"
-          }
-        }
-      },
-      "IK_JPseudoInverse": {
-        "status": "PENDING",
-        "comments": [
-          "0 out of 3 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_0.js:1865\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_0.js:1865:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-gr"
-          },
-          "Test 1": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_1.js:1865\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_1.js:1865:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-gr"
-          },
-          "Test 2": {
-            "Status": "Failed",
-            "Stderr": "Error message too long, print partially: b'/omkarv/IK_JPseudoInverse/test_2.js:1865\\n    for(var i = 0; i < jointArray.length ; i++){\\n                       ^\\n\\nReferenceError: jointArray is not defined\\n    at Object.iterate_inverse_kinematics [as iterateIK] (/omkarv/IK_JPseudoInverse/test_2.js:1865:24)\\n    at Object.robot_inverse_kinematics [as robotInverseKinematics] (/home/logan/Desktop/teaching/CI-gr"
-          }
-        }
-      },
-      "MotionPlan_Collision": {
-        "status": "PENDING",
-        "comments": [
-          "1 out of 3 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Collision test 0 failed\\n'"
-          },
-          "Test 1": {
-            "Status": "Failed",
-            "Stderr": "b'[ERROR]: Collision test 1 failed\\n'"
-          },
-          "Test 2": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "MotionPlan_2DRRTConnect": {
-        "status": "PASS - within two weeks (80% partial credit)",
-        "comments": [
-          "4 out of 4 test cases passed"
-        ],
-        "test results": {
-          "Test 0": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 1": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 2": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          },
-          "Test 3": {
-            "Status": "Succeed",
-            "Stderr": "b''"
-          }
-        }
-      },
-      "MotionPlan_CSpaceRRTConnect": {
-        "status": "PENDING",
-        "comments": [
-          ""
-        ]
-      },
-      "Pitch": {
-        "status": "PENDING",
-        "comments": [
-          ""
-        ]
-      },
-      "FK_BaseOffset": {
-        "status": "PENDING",
-        "comments": [
-          ""
-        ]
-      }
+      "ROS": "100.0%",
+      "PathPlan_AStar": "100.0%",
+      "PathPlan_Heap": "100.0%",
+      "Pendularm_Euler": "100.0%",
+      "Pendularm_VelocityVerlet": "100.0%",
+      "Pendularm_PID": "100.0%",
+      "FK_MatrixRoutines": "0.0%",
+      "FK_Transforms": "100.0%",
+      "FSMDance_Quaternion": "100.0%",
+      "FSMDance_SetpointControl": "0.0%",
+      "IK_Jacobian": "0.0%",
+      "IK_JTranspose": "0.0%",
+      "IK_JPseudoInverse": "0.0%",
+      "MotionPlan_Collision": "0.0%",
+      "MotionPlan_2DRRTConnect": "0.0%",
+      "FK_JointRendering": "0.0%",
+      "FK_Presentation": "100.0%",
+      "FK_NewRobot": "100.0%",
+      "FSMDance_BaseControl": "0.0%",
+      "FSM_Presentation": "17.0%",
+      "FSMDance_FSM": "0.0%",
+      "MotionPlan_CSpaceRRTConnect": "0.0%",
+      "Best Use of Robotics": "100.0%"
     },
-    "quizzes": [
-      {
-        "status": "Takehome: 1.0 Interactive: 1.0"
-      },
-      {
-        "status": "Takehome: 0.75 Interactive: 1.0"
-      },
-      {
-        "status": "Takehome: 0.9 Interactive: 1.0"
-      },
-      {
-        "status": "Takehome (Doubled): 1.3  (No Interactive)"
-      },
-      {
-        "status": "Takehome: 0.75 Interactive: 0.0"
-      },
-      {
-        "status": "Voted in the URDF showcase: 2.0  (No Takehome)"
-      },
-      {
-        "status": "Takehome: 0.5 Interactive: 0.2"
-      },
-      {
-        "status": "Voted in the FSM Dance showcase: 2.0  (No Takehome)"
-      },
-      {
-        "status": "No Quiz 9, 2 points given"
-      },
-      {
-        "status": "No Quiz 10, 2 points given"
-      },
-      {
-        "status": "No Quiz 11, 2 points given"
-      }
-    ]
+    "quizzes": {
+      "Q1": "100.0%",
+      "Q2": "100.0%",
+      "Q3": "95.0%",
+      "Q4": "90.0%",
+      "Q5": "37.5%",
+      "Q6": "100.0%",
+      "Q7": "35.0%",
+      "Q8": "100.0%",
+      "Q9": "100.0%",
+      "Q10": "100.0%"
+    }
   }
 }
